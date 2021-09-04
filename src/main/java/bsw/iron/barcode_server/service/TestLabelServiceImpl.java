@@ -17,8 +17,8 @@ public class TestLabelServiceImpl implements TestLabelService{
     }
 
     @Override
-    public List<TestLabel> findAllByNumbSpool(String numbSpool) {
-        return testLabelRepository.findAllByNumbSpool(numbSpool);
+    public List<TestLabel> findByNumbSpool(String numbSpool) {
+        return testLabelRepository.findByNumbSpool(numbSpool);
 
 
     }

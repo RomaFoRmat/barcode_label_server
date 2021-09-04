@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface TestLabelRepository extends JpaRepository<TestLabel,Long> {
 
-    public List<TestLabel> findAllByNumbSpool(String numbSpool);
+    public List<TestLabel> findByNumbSpool(String numbSpool);
 
 }

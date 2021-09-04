@@ -22,8 +22,8 @@ public class ControllerTestLabel {
 
 
     @GetMapping("/label/spool/{numbSpool}")
-    public List<TestLabel> showAllNumbSpool(@PathVariable String numbSpool) {
-        return testLabelService.findAllByNumbSpool(numbSpool);
+    public List<TestLabel> showDataNumbSpool(@PathVariable String numbSpool) {
+        return testLabelService.findByNumbSpool(numbSpool);
     }
 
 }

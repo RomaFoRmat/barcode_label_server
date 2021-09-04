@@ -7,5 +7,5 @@ import java.util.List;
 public interface TestLabelService {
 //    public List<TestLabel> getAllTestLabel();
 //    public TestLabel getTestLabel(Long id_group);
-    public List<TestLabel> findAllByNumbSpool(String numbSpool);
+    public List<TestLabel> findByNumbSpool(String numbSpool);
 }
