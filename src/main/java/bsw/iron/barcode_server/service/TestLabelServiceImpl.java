@@ -2,10 +2,9 @@ package bsw.iron.barcode_server.service;
 
 import bsw.iron.barcode_server.entity.TestLabel;
 import bsw.iron.barcode_server.repository.TestLabelRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TestLabelServiceImpl implements TestLabelService{
@@ -17,8 +16,8 @@ public class TestLabelServiceImpl implements TestLabelService{
     }
 
     @Override
-    public List<TestLabel> findByNumbSpool(String numbSpool) {
-        return testLabelRepository.findByNumbSpool(numbSpool);
+    public List<TestLabel> findByNumberSpool(String numberSpool) {
+        return testLabelRepository.findByNumberSpool(numberSpool);
 
 
     }

@@ -2,7 +2,6 @@ package bsw.iron.barcode_server.controller;
 
 import bsw.iron.barcode_server.entity.TestLabel;
 import bsw.iron.barcode_server.service.TestLabelService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,9 +20,9 @@ public class ControllerTestLabel {
     }
 
 
-    @GetMapping("/label/spool/{numbSpool}")
-    public List<TestLabel> showDataNumbSpool(@PathVariable String numbSpool) {
-        return testLabelService.findByNumbSpool(numbSpool);
+    @GetMapping("/label/spool/{numberSpool}")
+    public List<TestLabel> showDataNumbSpool(@PathVariable String numberSpool) {
+        return testLabelService.findByNumberSpool(numberSpool);
     }
 
 }

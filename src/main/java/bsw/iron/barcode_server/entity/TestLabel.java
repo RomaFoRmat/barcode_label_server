@@ -86,5 +86,4 @@ public class TestLabel {
     @Column(name="CODEDEFFECT")
     private String codeDefect;
 
-
 }
