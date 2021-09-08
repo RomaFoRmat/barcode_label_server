@@ -1,20 +1,18 @@
 package bsw.iron.barcode_server.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Entity
 @Table(name = "TEST_LABEL", schema = "LABCZL" )
 public class TestLabel {
@@ -23,14 +21,14 @@ public class TestLabel {
     @Column(name = "ID_GROUP")
     private Long id_group;
 
-    @Column(name="DATE_CREATE")
-    private Date date_create;
+    @Column(name = "DATE_CREATE")
+    private LocalDate date_create;
 
     @Column(name="KOD")
     private String code;
 
-    @Column(name="LOT")
-    private int lot;
+    @Column(name = "LOT")
+    private Integer lot;
 
     @Column(name="PART")
     private String part;
@@ -44,14 +42,14 @@ public class TestLabel {
     @Column(name = "NTAB")
     private String personal_rope;
 
-    @Column(name="LENGHTH")
-    private int length;
+    @Column(name = "LENGHTH")
+    private Integer length;
 
     @Column(name = "NUMBSPOOL")
     private String numberSpool;
 
-    @Column(name="SVAR")
-    private int welds;
+    @Column(name = "SVAR")
+    private Integer welds;
 
     @Column(name = "PR1")
     private Integer straightforwardness1;
