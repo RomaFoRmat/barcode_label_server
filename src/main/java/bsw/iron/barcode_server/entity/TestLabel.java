@@ -52,34 +52,34 @@ public class TestLabel {
     private Integer welds;
 
     @Column(name = "PR1")
-    private Integer straightforwardness1;
+    private Float straightforwardness1;
 
     @Column(name = "PR2")
-    private Integer straightforwardness2;
+    private Float straightforwardness2;
 
     @Column(name = "PR3")
-    private Integer straightforwardness3;
+    private Float straightforwardness3;
 
     @Column(name = "PR4")
-    private Integer straightforwardness4;
+    private Float straightforwardness4;
 
     @Column(name = "PR5")
-    private Integer straightforwardness5;
+    private Float straightforwardness5;
 
     @Column(name = "PRAVG")
-    private Integer straightforwardnessAvg;
+    private Float straightforwardnessAvg;
 
     @Column(name = "TORSKAN")
-    private Integer torsRope;
+    private Float torsRope;
 
     @Column(name = "BENDINGKAN")
-    private Integer straightforwardnessRope;
+    private Float straightforwardnessRope;
 
     @Column(name = "BENDING_400")
-    private Integer straightforwardness400;
+    private Float straightforwardness400;
 
-    @Column(name="TORSION")
-    private Integer torsion;
+    @Column(name = "TORSION")
+    private Float torsion;
 
     @Column(name="CODEDEFFECT")
     private String codeDefect;
