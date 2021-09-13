@@ -24,16 +24,19 @@ public class TestLabel {
     @Column(name = "DATE_CREATE")
     private LocalDate date_create;
 
-    @Column(name="KOD")
+    @Column(name = "KOD")
     private String code;
+
+    @Column(name = "CONSTRUCT")
+    private String construct;
 
     @Column(name = "LOT")
     private Integer lot;
 
-    @Column(name="PART")
+    @Column(name = "PART")
     private String part;
 
-    @Column(name="RL")
+    @Column(name = "RL")
     private String rl;
 
     @Column(name = "TYPEBOBIN")
@@ -45,7 +48,7 @@ public class TestLabel {
     @Column(name = "LENGHTH")
     private Integer length;
 
-    @Column(name = "NUMBSPOOL")
+    @Column(name = "NUMBERSPOOL")
     private String numberSpool;
 
     @Column(name = "SVAR")
@@ -69,19 +72,19 @@ public class TestLabel {
     @Column(name = "PRAVG")
     private Float straightforwardnessAvg;
 
-    @Column(name = "TORSKAN")
+    @Column(name = "STRAIGHT_ROPE")
     private Float straightforwardnessRope;
 
-    @Column(name = "BENDINGKAN") //В БД Неправильно указано название
+    @Column(name = "TORSION_ROPE") //В БД Неправильно указано название
     private Float torsRope;
 
-    @Column(name = "BENDING_400")
+    @Column(name = "STRAIGHT_300")
     private Float straightforwardness300;
 
     @Column(name = "TORSION")
     private Float torsion;
 
-    @Column(name = "CODEDEFFECT")
+    @Column(name = "CODEDEFECT")
     private String codeDefect;
 
 }
