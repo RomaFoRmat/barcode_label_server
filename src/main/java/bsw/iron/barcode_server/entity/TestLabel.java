@@ -70,18 +70,18 @@ public class TestLabel {
     private Float straightforwardnessAvg;
 
     @Column(name = "TORSKAN")
-    private Float torsRope;
-
-    @Column(name = "BENDINGKAN")
     private Float straightforwardnessRope;
 
+    @Column(name = "BENDINGKAN") //В БД Неправильно указано название
+    private Float torsRope;
+
     @Column(name = "BENDING_400")
-    private Float straightforwardness400;
+    private Float straightforwardness300;
 
     @Column(name = "TORSION")
     private Float torsion;
 
-    @Column(name="CODEDEFFECT")
+    @Column(name = "CODEDEFFECT")
     private String codeDefect;
 
 }
