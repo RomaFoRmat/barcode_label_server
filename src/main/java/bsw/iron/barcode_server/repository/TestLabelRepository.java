@@ -8,8 +8,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface TestLabelRepository extends JpaRepository<TestLabel,Long> {
+public interface TestLabelRepository extends JpaRepository<TestLabel, Long> {
 
     public List<TestLabel> findByNumberSpool(String numberSpool);
+
+    public List<TestLabel> findAll();
 
 }

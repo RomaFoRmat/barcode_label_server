@@ -25,4 +25,9 @@ public class ControllerTestLabel {
         return testLabelService.findByNumberSpool(numberSpool);
     }
 
+    @GetMapping("/label/spool")
+    public List<TestLabel> getAllSpools() {
+        return testLabelService.findAll();
+    }
+
 }

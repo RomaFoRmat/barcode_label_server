@@ -22,4 +22,9 @@ public class TestLabelServiceImpl implements TestLabelService{
 
     }
 
+    @Override
+    public List<TestLabel> findAll() {
+        return testLabelRepository.findAll();
+    }
+
 }
