@@ -18,8 +18,6 @@ public class TestLabelServiceImpl implements TestLabelService{
     @Override
     public List<TestLabel> findByNumberSpool(String numberSpool) {
         return testLabelRepository.findByNumberSpool(numberSpool);
-
-
     }
 
     @Override

@@ -14,12 +14,19 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @ToString
 @Entity
-@Table(name = "TEST_LABEL", schema = "LABCZL" )
+@Table(name = "TEST_LABEL", schema = "LABCZL")
 public class TestLabel {
 
-    @Id
+
+//    @Column(name= "ID_FOREING_GROUP")
+//    private Long id_foreing_group;
+
     @Column(name = "ID_GROUP")
     private Long id_group;
+
+    @Id
+    @Column(name = "NUMBERSPOOL")
+    private String numberSpool;
 
     @Column(name = "DATE_CREATE")
     private LocalDate date_create;
@@ -31,7 +38,7 @@ public class TestLabel {
     private String construct;
 
     @Column(name = "LOT")
-    private Integer lot;
+    private String lot;
 
     @Column(name = "PART")
     private String part;
@@ -47,9 +54,6 @@ public class TestLabel {
 
     @Column(name = "LENGHTH")
     private Integer length;
-
-    @Column(name = "NUMBERSPOOL")
-    private String numberSpool;
 
     @Column(name = "SVAR")
     private Integer welds;
