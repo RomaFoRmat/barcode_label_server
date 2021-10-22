@@ -17,17 +17,18 @@ public class TestValue {
     @JoinColumn(name = "ID_FOREING_GROUP")
     private ForeignGroup foreignGroup;
 
+
     @Column(name = "TEXT_VALUE")
     private String textValue;
 
     @Column(name = "VALUE")
-    private Float value;
+    private Double value;
 
-    @Id
+
     @Column(name = "ID_PEREDEL")
     private Integer idPeredel;
 
-
+    @Id
     @Column(name = "ID_TEST_HEAD")
     private Long idTestHead;
 
