@@ -19,7 +19,7 @@ public class ControllerForeignGroup {
     }
 
     @GetMapping("/label/table/idForeignGroup")
-    public List<ForeignGroup> findAll() {
-        return foreignGroupService.findAll();
+    public List<ForeignGroup> findAllByMainGroup() {
+        return foreignGroupService.findAllByMainGroup();
     }
 }

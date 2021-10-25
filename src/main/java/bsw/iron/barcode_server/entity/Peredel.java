@@ -4,7 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Data
 @AllArgsConstructor
@@ -20,9 +23,9 @@ public class Peredel {
     @Column(name = "NAME_PEREDEL")
     private String namePeredel;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "group_id")
-    private GroupPeredel idGroup;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "group_id")
+//    private GroupPeredel idGroup;
 //
 //    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name="id_group")

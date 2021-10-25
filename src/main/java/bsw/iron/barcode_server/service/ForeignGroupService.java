@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ForeignGroupService {
 
-    public List<ForeignGroup> findAll();
+    public List<ForeignGroup> findAllByMainGroup();
 }

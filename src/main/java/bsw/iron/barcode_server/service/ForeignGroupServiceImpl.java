@@ -16,7 +16,7 @@ public class ForeignGroupServiceImpl implements ForeignGroupService {
     }
 
     @Override
-    public List<ForeignGroup> findAll() {
-        return foreignGroupRepository.findAll();
+    public List<ForeignGroup> findAllByMainGroup() {
+        return foreignGroupRepository.findAllByMainGroup();
     }
 }

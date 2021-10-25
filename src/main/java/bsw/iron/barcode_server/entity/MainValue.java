@@ -32,4 +32,5 @@ public class MainValue {
     @Id
     @Column(name = "DATE_VALUE")
     private LocalDate date_value;
+
 }
