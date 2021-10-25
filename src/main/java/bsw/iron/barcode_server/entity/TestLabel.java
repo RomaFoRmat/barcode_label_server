@@ -36,6 +36,9 @@ public class TestLabel {
     @Column(name = "CONSTRUCT")
     private String construct;
 
+    @Column(name = "CONSUMER_CODE")
+    private String consumer_code;
+
     @Column(name = "LOT")
     private String lot;
 
