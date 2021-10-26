@@ -17,13 +17,14 @@ import java.time.LocalDate;
 @Table(name = "TEST_BARCODE_LABEL", schema = "LABCZL")
 public class TestLabel {
 
-    //    @Id
+    @Id
     @Column(name = "ID_FOREING_GROUP")
     private Long id_foreing_group;
 
     @Column(name = "ID_GROUP")
     private Long id_group;
-    @Id
+
+//    @Id
     @Column(name = "NUMBERSPOOL")
     private String numberSpool;
 

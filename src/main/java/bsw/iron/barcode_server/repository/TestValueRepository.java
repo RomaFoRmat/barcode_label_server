@@ -17,4 +17,10 @@ public interface TestValueRepository extends JpaRepository<TestValue, Long> {
 
     @Query("SELECT tv FROM TestValue tv WHERE tv.idPeredel=11690")
     public Page<TestValue> findAllByIdPeredel(Pageable pageable);
+
+//    @Query("SELECT tv, fg FROM TestValue tv, ForeignGroup  fg WHERE tv.idPeredel = 11690 and tv.idTestHead = 11697 and  tv.foreignGroup.idForeignGroup = fg.idForeignGroup " +
+//            "and tv.idTestHead=11699 and  tv.foreignGroup.idForeignGroup = fg.idForeignGroup ")
+//    public Page<TestValue> findAllByIdPeredel(Pageable pageable);
+
+
 }
