@@ -18,14 +18,19 @@ public class TestValueServiceImpl implements TestValueService {
     }
 
     @Override
-    public List<TestValue> findAllByIdPeredelAndIdTestHead() {
-        return testValueRepository.findAllByIdPeredelAndIdTestHead();
+    public List<TestValue> findByIdPeredelAndIdTestHead(Long idTestHead) {
+        return testValueRepository.findByIdPeredelAndIdTestHead(idTestHead);
     }
 
 
     @Override
     public Page<TestValue> findAllByIdPeredel(Pageable pageable) {
         return testValueRepository.findAllByIdPeredel(pageable);
+    }
+
+    @Override
+    public List<TestValue> findAllByIdPeredel() {
+        return testValueRepository.findAllByIdPeredel();
     }
 
 

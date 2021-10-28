@@ -5,10 +5,7 @@ import bsw.iron.barcode_server.service.TestValueService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -23,22 +20,26 @@ public class ControllerTestValue {
         this.testValueService = testValueService;
     }
 
-    @GetMapping("/label/spool/testvalue11697")
-    public List<TestValue> findAllByIdPeredelAndIdTestHead() {
-        return testValueService.findAllByIdPeredelAndIdTestHead();
+    @GetMapping("/findAllValues/for11690/{idTestHead}")
+    public List<TestValue> findByIdPeredelAndIdTestHead(@PathVariable Long idTestHead) {
+        return testValueService.findByIdPeredelAndIdTestHead(idTestHead);
     }
 
 
-    @GetMapping("/label/spool/testvalues")
+    @GetMapping("/findAllValues/for11690")
     public Page<TestValue> findAllByIdPeredel(
             @RequestParam Optional<Integer> page,
             @RequestParam Optional<String> sortBy) {
         return testValueService.findAllByIdPeredel(
                 PageRequest.of(page.orElse(0),
-                        5,
-                        Sort.Direction.DESC, sortBy.orElse("foreignGroup")));
+                        10,
+                        Sort.Direction.DESC, sortBy.orElse("idForeign")));
     }
 
+    @GetMapping("/allvalues")
+    public List<TestValue> findAllByIdPeredel() {
+        return testValueService.findAllByIdPeredel();
+    }
 
 }
 

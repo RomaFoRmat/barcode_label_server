@@ -15,12 +15,18 @@ public class ForeignGroup {
 
     @Id
     @Column(name = "ID_FOREING_GROUP")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "FOREING_SEQUENCE")
-    @SequenceGenerator(name = "FOREING_SEQUENCE", sequenceName = "FOREING_SEQUENCE", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "FOREING_SEQENCE")
+    @SequenceGenerator(name = "FOREING_SEQENCE", sequenceName = "FOREING_SEQENCE", allocationSize = 1)
     private Long idForeignGroup;
 
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_group")
     private MainGroup mainGroup;
+
+//    @OneToMany
+//    @JoinColumn(name="ID_FOREING_GROUP")
+//    private List<TestValue> testValueList;
+
+
 }
