@@ -22,7 +22,7 @@ public class TestValue {
 //    private ForeignGroup foreignGroup;
 
     /**
-     * В таблице idForeign выступает в качестве внешнего ключа на табличку ForeignGroup, отношением @ManyTo one.
+     * В данной таблице idForeign выступает в качестве внешнего ключа на табличку ForeignGroup, отношением @ManyTo one.
      *
      * @Id на внешний ключ задать не можем,Spring JPA это ненравится,а другие поля не укальны,т.к. значения могут
      * повторяться и будут траблы с выводом. Поэтому здесь связь не указываем.
@@ -40,7 +40,7 @@ public class TestValue {
     private Double value;
 
     @Column(name = "ID_PEREDEL")
-    private Integer idPeredel;
+    private Integer idConversion;
 
 
     @Column(name = "ID_TEST_HEAD")

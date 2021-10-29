@@ -15,11 +15,11 @@ public class TestHead {
 
     @Id
     @Column(name = "ID_TEST_HEAD")
-    private Integer id_testHead;
+    private Integer idTestHead;
 
     @ManyToOne
     @JoinColumn(name = "ID_PEREDEL")
-    private Peredel peredel;
+    private Conversion conversion;
 
     @Column(name = "NAME")
     private String name;

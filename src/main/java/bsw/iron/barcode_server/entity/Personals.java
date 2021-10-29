@@ -15,7 +15,7 @@ public class Personals {
 
     @Id
     @Column(name = "ID_PERSONAL")
-    private Integer id_personal;
+    private Integer idPersonal;
 
     @Column(name = "FIO")
     private String fio;

@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface MainGroupService {
 
-    public List<MainGroup> findAllByIdPeredel();
+    public List<MainGroup> findAllByIdConversion();
 
     public MainGroup addIdMain(MainGroup mainGroup);
 

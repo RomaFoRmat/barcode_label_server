@@ -8,10 +8,11 @@ import java.util.List;
 
 public interface TestValueService {
 
-    public List<TestValue> findByIdPeredelAndIdTestHead(Long idTestHead);
+    public List<TestValue> findByIdConversionAndIdTestHead(Long idTestHead);
 
-    public Page<TestValue> findAllByIdPeredel(Pageable pageable);
+    public Page<TestValue> findAllByIdConversion(Pageable pageable);
 
 
-    public List<TestValue> findAllByIdPeredel();
+    public List<TestValue> findAllByIdConversion();
+
 }

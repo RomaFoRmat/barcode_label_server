@@ -18,20 +18,22 @@ public class ForeignGroupServiceImpl implements ForeignGroupService {
         this.foreignGroupRepository = foreignGroupRepository;
     }
 
-    @Override
-    public List<ForeignGroup> findAllByMainGroup() {
-        return foreignGroupRepository.findAllByMainGroup();
-    }
 
     @Override
-    public List<ForeignGroup> findByMainGroup(MainGroup mainGroup) {
-        return foreignGroupRepository.findByMainGroup(mainGroup);
+    public List<ForeignGroup> findByMainGroupIdConversionAndIdForeignGroup(Long idForeignGroup) {
+        return foreignGroupRepository.findByMainGroupIdConversionAndIdForeignGroup(idForeignGroup);
     }
 
     @Override
     public ForeignGroup saveAndFlush(ForeignGroup foreignGroup) {
         return foreignGroupRepository.saveAndFlush(foreignGroup);
     }
+
+    @Override
+    public List<ForeignGroup> findAllByMainGroupIdConversionAndIdForeignGroup() {
+        return foreignGroupRepository.findAllByMainGroupIdConversionAndIdForeignGroup();
+    }
+
 
 //    @Override
 //    public ForeignGroup saveAndFlush(ForeignGroup foreignGroup, Long idGroup) {

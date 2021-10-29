@@ -12,30 +12,32 @@ import java.util.List;
 @Repository
 public interface TestValueRepository extends JpaRepository<TestValue, Long> {
 
-    /**
-     * Поиск значения (value либо textValue в зависимости от типа данных) в таблице TestValue по переделу = 11690(металлокорд) и idTestHead(id того или иного параметра)
-     * idPeredel = 11690 (const) ;
-     * idTestHead - используются все id value для данного передела
-     */
+    //Здесь хранятся сами значения для подчиненной таблицы
 
-    @Query("SELECT tv FROM TestValue tv WHERE tv.idPeredel = 11690 and tv.idTestHead = :idTestHead")
-    public List<TestValue> findByIdPeredelAndIdTestHead(Long idTestHead);
+ /**
+  * Поиск значения (value либо textValue в зависимости от типа данных) в таблице TestValue по переделу = 11690(металлокорд) и idTestHead(id того или иного параметра)
+  * idConversion = 11690 (const) ;
+  * idTestHead - используются все id value для данного передела.
+  */
 
-    /**
-     * Получение всех значений для передела 11690 (долго выполняется запрос  даже постранично и не корректно)
-     * выдает одинаковые записи,возможно из-за того,что idForeign в TestValue выступает в роле @Id):
-     */
+    @Query("SELECT tv FROM TestValue tv WHERE tv.idConversion = 11690 and tv.idTestHead = :idTestHead")
+    public List<TestValue> findByIdConversionAndIdTestHead(Long idTestHead);
 
-    @Query("SELECT tv FROM TestValue tv WHERE tv.idPeredel=11690")
-    public Page<TestValue> findAllByIdPeredel(Pageable pageable);
+ /**
+  * Получение всех значений подчиненной таблицы для передела 11690 постранично
+  * (долго выполняется запрос и не корректно) почему то выдает выдает одинаковые записи.
+  * Обычный вывод значений работает быстрее (но тоже долго)
+  */
 
-    @Query("SELECT tv FROM TestValue tv WHERE tv.idPeredel=11690")
-    public List<TestValue> findAllByIdPeredel();
+    @Query("SELECT tv FROM TestValue tv WHERE tv.idConversion=11690")
+    public Page<TestValue> findAllByIdConversion(Pageable pageable);
 
+ /**
+  *  Получение всех значений подчиненной таблицы для передела 11690, отображается нормально, но соответственно долго
+  */
+    @Query("SELECT tv FROM TestValue tv WHERE tv.idConversion=11690")
+    public List<TestValue> findAllByIdConversion();
 
-//    @Query("SELECT tv, fg FROM TestValue tv, ForeignGroup  fg WHERE tv.idPeredel = 11690 and tv.idTestHead = 11697 and  tv.foreignGroup.idForeignGroup = fg.idForeignGroup " +
-//            "and tv.idTestHead=11699 and  tv.foreignGroup.idForeignGroup = fg.idForeignGroup ")
-//    public Page<TestValue> findAllByIdPeredel(Pageable pageable);
 
 
 }

@@ -23,7 +23,7 @@ public class MainGroup {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ID_PEREDEL")
-    private Peredel idPeredel;
+    private Conversion idConversion;
 
     @Column(name = "DATE_CREATE")
     private LocalDate dateCreate;

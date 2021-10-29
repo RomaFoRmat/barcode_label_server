@@ -12,33 +12,33 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/")
-public class ControllerTestValue {
+public class TestValueController {
 
     private final TestValueService testValueService;
 
-    public ControllerTestValue(TestValueService testValueService) {
+    public TestValueController(TestValueService testValueService) {
         this.testValueService = testValueService;
     }
 
-    @GetMapping("/findAllValues/for11690/{idTestHead}")
-    public List<TestValue> findByIdPeredelAndIdTestHead(@PathVariable Long idTestHead) {
-        return testValueService.findByIdPeredelAndIdTestHead(idTestHead);
+    @GetMapping("/getAllTestValuesByIdConversion11690/{idTestHead}")
+    public List<TestValue> findByIdConversionAndIdTestHead(@PathVariable Long idTestHead) {
+        return testValueService.findByIdConversionAndIdTestHead(idTestHead);
     }
 
 
-    @GetMapping("/findAllValues/for11690")
-    public Page<TestValue> findAllByIdPeredel(
+    @GetMapping("/getAllTestValuesByIdConversion11690")
+    public Page<TestValue> findAllByIdConversion(
             @RequestParam Optional<Integer> page,
             @RequestParam Optional<String> sortBy) {
-        return testValueService.findAllByIdPeredel(
+        return testValueService.findAllByIdConversion(
                 PageRequest.of(page.orElse(0),
                         10,
                         Sort.Direction.DESC, sortBy.orElse("idForeign")));
     }
 
-    @GetMapping("/allvalues")
-    public List<TestValue> findAllByIdPeredel() {
-        return testValueService.findAllByIdPeredel();
+    @GetMapping("/allTestValuesByIdConversion11690")
+    public List<TestValue> findAllByIdConversion() {
+        return testValueService.findAllByIdConversion();
     }
 
 }

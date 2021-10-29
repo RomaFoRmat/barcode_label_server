@@ -16,8 +16,8 @@ public class MainGroupServiceImpl implements MainGroupService {
     }
 
     @Override
-    public List<MainGroup> findAllByIdPeredel() {
-        return mainGroupRepository.findAllByIdPeredel();
+    public List<MainGroup> findAllByIdConversion() {
+        return mainGroupRepository.findAllByIdConversion();
     }
 
     @Override

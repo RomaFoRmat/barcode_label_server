@@ -19,10 +19,10 @@ public class HeadMain {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ID_PEREDEL")
-    private Peredel peredel;
+    private Conversion conversion;
 
     @Column(name = "NAME_HEAD")
-    private String name_head;
+    private String nameHead;
 
     @Column(name = "CAPTION_NAME")
     private String captionName;

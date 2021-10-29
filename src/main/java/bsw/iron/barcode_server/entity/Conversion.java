@@ -11,14 +11,14 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "PEREDEL", schema = "LABCZL")
-public class Peredel {
+public class Conversion {
 
     @Id
     @Column(name = "ID_PEREDEL")
-    private Integer idPeredel;
+    private Integer idConversion;
 
     @Column(name = "NAME_PEREDEL")
-    private String namePeredel;
+    private String nameConversion;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "group_id")

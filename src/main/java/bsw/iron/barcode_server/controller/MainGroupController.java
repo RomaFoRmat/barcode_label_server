@@ -9,17 +9,17 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/")
-public class ControllerMainGroup {
+public class MainGroupController {
 
     private final MainGroupService mainGroupService;
 
-    public ControllerMainGroup(MainGroupService mainGroupService) {
+    public MainGroupController(MainGroupService mainGroupService) {
         this.mainGroupService = mainGroupService;
     }
 
-    @GetMapping("/label/table/idMainGroup")
-    public List<MainGroup> findAllByIdPeredel() {
-        return mainGroupService.findAllByIdPeredel();
+    @GetMapping("getAllByConversion11690/idMainGroup")
+    public List<MainGroup> findAllByIdConversion() {
+        return mainGroupService.findAllByIdConversion();
     }
 
 
@@ -29,7 +29,8 @@ public class ControllerMainGroup {
         return mainGroupService.addIdMain(mainGroup);
     }
 
-    @GetMapping("/idGroup/{idGroup}")
+
+    @GetMapping("/getIdGroupByConversion11690/{idGroup}")
     public List<MainGroup> showMainGroupsByIdGroup(@PathVariable Long idGroup) {
         return mainGroupService.findByIdGroup(idGroup);
     }

@@ -11,11 +11,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/")
-public class ControllerTestLabel {
+public class TestLabelController {
 
     private final TestLabelService testLabelService;
 
-    public ControllerTestLabel(TestLabelService testLabelService) {
+    public TestLabelController(TestLabelService testLabelService) {
         this.testLabelService = testLabelService;
     }
 
