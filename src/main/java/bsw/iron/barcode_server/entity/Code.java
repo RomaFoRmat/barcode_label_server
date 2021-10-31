@@ -1,6 +1,6 @@
 package bsw.iron.barcode_server.entity;
 
-import com.sun.jndi.url.corbaname.corbanameURLContextFactory;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "CODE",schema = "LABCZL")
+@Table(name = "CODE",schema = "HR")
 public class Code {
 
     @Id

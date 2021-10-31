@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "TEST_BARCODE_LABEL", schema = "LABCZL")
+@Table(name = "TEST_BARCODE_LABEL", schema = "HR")
 public class TestLabel {
 
     @Id
@@ -37,8 +37,8 @@ public class TestLabel {
     @Column(name = "CONSTRUCT")
     private String construct;
 
-    @Column(name = "CONSUMER_CODE")
-    private String consumer_code;
+//    @Column(name = "CONSUMER_CODE")
+//    private String consumer_code;
 
     @Column(name = "LOT")
     private String lot;
@@ -79,19 +79,19 @@ public class TestLabel {
     @Column(name = "PRAVG")
     private Float straightforwardnessAvg;
 
-    @Column(name = "STRAIGHT_ROPE")
-    private Float straightforwardnessRope;
-
-    @Column(name = "TORSION_ROPE") //В БД Неправильно указано название
-    private Float torsRope;
-
-    @Column(name = "STRAIGHT_300")
-    private Float straightforwardness300;
+//    @Column(name = "STRAIGHT_ROPE")
+//    private Float straightforwardnessRope;
+//
+//    @Column(name = "TORSION_ROPE") //В БД Неправильно указано название
+//    private Float torsRope;
+//
+//    @Column(name = "STRAIGHT_300")
+//    private Float straightforwardness300;
 
     @Column(name = "TORSION")
     private Float torsion;
 
-    @Column(name = "CODEDEFECT")
-    private String codeDefect;
+//    @Column(name = "CODEDEFECT")
+//    private String codeDefect;
 
 }

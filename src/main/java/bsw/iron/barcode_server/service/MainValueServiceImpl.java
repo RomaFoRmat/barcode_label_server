@@ -17,12 +17,12 @@ public class MainValueServiceImpl implements MainValueService {
     }
 
     @Override
-    public List<MainValue> findByHeadMainConversionIdConversionAndHeadMainIdHead(Long idHead) {
-        return mainValueRepository.findByHeadMainConversionIdConversionAndHeadMainIdHead(idHead);
+    public List<MainValue> findByMainValuePrimaryKeyIdHead(Long idHead) {
+        return mainValueRepository.findByMainValuePrimaryKeyIdHead(idHead);
     }
 
     @Override
-    public List<MainValue> findAllByHeadMain_Conversion_IdConversion() {
-        return mainValueRepository.findAllByHeadMain_Conversion_IdConversion();
+    public List<MainValue> findAll() {
+        return mainValueRepository.findAll();
     }
 }

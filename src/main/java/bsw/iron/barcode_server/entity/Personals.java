@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "PERSONALS", schema = "LABCZL")
+@Table(name = "PERSONALS", schema = "HR")
 public class Personals {
 
     @Id

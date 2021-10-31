@@ -20,12 +20,12 @@ public class MainValueController {
     }
 
     @GetMapping("/getAllMainValuesByIdConversion11690/{idHead}")
-    public List<MainValue> findByHeadMainConversionIdConversionAndHeadMainIdHead(@PathVariable Long idHead){
-        return mainValueService.findByHeadMainConversionIdConversionAndHeadMainIdHead(idHead);
+    public List<MainValue> findByMainValuePrimaryKeyIdHead(@PathVariable Long idHead){
+        return mainValueService.findByMainValuePrimaryKeyIdHead(idHead);
     }
 
     @GetMapping("/getAllMainValuesByIdConversion11690")
-    public List<MainValue> findAllByHeadMain_Conversion_IdConversion(){
-        return mainValueService.findAllByHeadMain_Conversion_IdConversion();
+    public List<MainValue> findAll(){
+        return mainValueService.findAll();
     }
 }

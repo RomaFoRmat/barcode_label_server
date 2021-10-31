@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "MAIN_GROUP", schema = "LABCZL")
+@Table(name = "MAIN_GROUP", schema = "HR")
 
 public class MainGroup {
 

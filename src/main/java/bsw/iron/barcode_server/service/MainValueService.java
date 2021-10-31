@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface MainValueService {
 
-    public List<MainValue> findByHeadMainConversionIdConversionAndHeadMainIdHead(Long idHead);
+    public List<MainValue> findByMainValuePrimaryKeyIdHead(Long idHead);
 
-    public List<MainValue> findAllByHeadMain_Conversion_IdConversion();
+    public List<MainValue> findAll();
 }

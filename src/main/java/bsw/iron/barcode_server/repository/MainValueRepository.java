@@ -18,9 +18,11 @@ public interface MainValueRepository extends JpaRepository<MainValue, Long> {
  * idConversion = 11690 (const) ;
  * idHead - используются все id value для данного передела
  */
-    @Query("SELECT mv FROM MainValue mv WHERE mv.headMain.conversion.idConversion = 11690 AND mv.headMain.idHead= :idHead")
-    public List<MainValue> findByHeadMainConversionIdConversionAndHeadMainIdHead(Long idHead);
+//    @Query("SELECT mv FROM MainValue mv WHERE mv.headMain.conversion.idConversion = 11690 AND mv.headMain.idHead= :idHead")
+//    public List<MainValue> findByHeadMainConversionIdConversionAndHeadMainIdHead(Long idHead);
 
+    @Query("SELECT mv FROM MainValue mv WHERE mv.mainValuePrimaryKey.idHead= :idHead")
+    public List<MainValue> findByMainValuePrimaryKeyIdHead(Long idHead);
 
 
 
@@ -28,6 +30,8 @@ public interface MainValueRepository extends JpaRepository<MainValue, Long> {
 /**
  *  Получение всех значений главной таблицы для передела 11690, отображается нормально, но соответственно долго
  */
-    @Query("SELECT mv FROM MainValue mv WHERE mv.headMain.conversion.idConversion=11690")
-    public List<MainValue> findAllByHeadMain_Conversion_IdConversion();
+//    @Query("SELECT mv FROM MainValue mv WHERE mv.headMain.conversion.idConversion=11690")
+//    public List<MainValue> findAllByHeadMain_Conversion_IdConversion();
+
+    public List<MainValue> findAll();
 }

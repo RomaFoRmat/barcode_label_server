@@ -15,4 +15,6 @@ public interface TestValueService {
 
     public List<TestValue> findAllByIdConversion();
 
+    public TestValue saveAndFlush(TestValue testValue);
+
 }

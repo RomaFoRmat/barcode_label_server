@@ -20,7 +20,7 @@ public interface TestValueRepository extends JpaRepository<TestValue, Long> {
   * idTestHead - используются все id value для данного передела.
   */
 
-    @Query("SELECT tv FROM TestValue tv WHERE tv.idConversion = 11690 and tv.idTestHead = :idTestHead")
+    @Query("SELECT tv FROM TestValue tv WHERE tv.idConversion = 11690 and tv.testValuePrimaryKey = :idTestHead")
     public List<TestValue> findByIdConversionAndIdTestHead(Long idTestHead);
 
  /**
@@ -37,6 +37,8 @@ public interface TestValueRepository extends JpaRepository<TestValue, Long> {
   */
     @Query("SELECT tv FROM TestValue tv WHERE tv.idConversion=11690")
     public List<TestValue> findAllByIdConversion();
+
+    public TestValue saveAndFlush(TestValue testValue);
 
 
 

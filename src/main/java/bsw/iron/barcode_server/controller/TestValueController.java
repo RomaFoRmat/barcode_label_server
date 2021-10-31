@@ -20,7 +20,7 @@ public class TestValueController {
         this.testValueService = testValueService;
     }
 
-    @GetMapping("/getAllTestValuesByIdConversion11690/{idTestHead}")
+    @GetMapping("/allTestValuesByIdConversion11690/{idTestHead}")
     public List<TestValue> findByIdConversionAndIdTestHead(@PathVariable Long idTestHead) {
         return testValueService.findByIdConversionAndIdTestHead(idTestHead);
     }
@@ -41,5 +41,9 @@ public class TestValueController {
         return testValueService.findAllByIdConversion();
     }
 
+    @PostMapping("/createTestValues")
+    public TestValue saveAndFlush(@RequestBody TestValue testValue){
+        return testValueService.saveAndFlush(testValue);
+    }
 }
 
