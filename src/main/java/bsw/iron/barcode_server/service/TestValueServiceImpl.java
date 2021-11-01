@@ -1,6 +1,5 @@
 package bsw.iron.barcode_server.service;
 
-import bsw.iron.barcode_server.entity.Conversion;
 import bsw.iron.barcode_server.entity.TestValue;
 import bsw.iron.barcode_server.repository.ConversionRepository;
 import bsw.iron.barcode_server.repository.TestValueRepository;
@@ -41,8 +40,9 @@ public class TestValueServiceImpl implements TestValueService {
     @Override
     @Transactional
     public TestValue saveAndFlush(TestValue testValue) {
-        Conversion conversion  = conversionRepository.findById(11690)
-                .orElseThrow(()-> new IllegalArgumentException("not found"));
+//        Conversion conversion  = conversionRepository.findById(11690)
+//                .orElseThrow(()-> new IllegalArgumentException("not found"));
+//        testValue.setIdConversion(11690);
         return testValueRepository.saveAndFlush(testValue);
     }
 

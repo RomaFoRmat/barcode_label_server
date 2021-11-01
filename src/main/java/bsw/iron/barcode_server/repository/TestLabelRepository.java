@@ -11,8 +11,12 @@ import java.util.List;
 @Repository
 public interface TestLabelRepository extends JpaRepository<TestLabel, Long> {
 
-//    @Query("SELECT tl FROM TestLabel  tl WHERE tl.date_create =(SELECT max(tl.date_create) FROM TestLabel tl)")
+
     public List<TestLabel> findByNumberSpool(String numberSpool);
+
+
+    @Query("SELECT tl FROM TestLabel tl ORDER BY tl.date_create DESC")
+    public List<TestLabel> findAll();
 
 
 }

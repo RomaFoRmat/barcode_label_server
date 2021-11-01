@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "PEREDEL", schema = "HR")
+@Table(name = "PEREDEL", schema = "LABCZL")
 public class Conversion {
 
     @Id

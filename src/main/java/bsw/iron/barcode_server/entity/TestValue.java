@@ -11,7 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "TEST_VALUE", schema = "HR")
+@Table(name = "TEST_VALUE", schema = "LABCZL")
 public class TestValue {
 
     //Композитный PK
@@ -32,7 +32,7 @@ public class TestValue {
     @Embeddable
     @Data
     @NoArgsConstructor
-    static class TestValuePrimaryKey implements Serializable {
+    public static class TestValuePrimaryKey implements Serializable {
 
         @Column(name = "ID_FOREING_GROUP")
         private Long idForeign;

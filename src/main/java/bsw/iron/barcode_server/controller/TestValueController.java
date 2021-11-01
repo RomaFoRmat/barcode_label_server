@@ -26,14 +26,14 @@ public class TestValueController {
     }
 
 
-    @GetMapping("/getAllTestValuesByIdConversion11690")
+    @GetMapping("/pageAllTestValuesByIdConversion11690")
     public Page<TestValue> findAllByIdConversion(
             @RequestParam Optional<Integer> page,
             @RequestParam Optional<String> sortBy) {
         return testValueService.findAllByIdConversion(
                 PageRequest.of(page.orElse(0),
                         10,
-                        Sort.Direction.DESC, sortBy.orElse("idForeign")));
+                        Sort.Direction.DESC, sortBy.orElse("testValuePrimaryKey")));
     }
 
     @GetMapping("/allTestValuesByIdConversion11690")
