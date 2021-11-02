@@ -1,7 +1,6 @@
 package bsw.iron.barcode_server.repository;
 
 import bsw.iron.barcode_server.entity.ForeignGroup;
-import bsw.iron.barcode_server.entity.MainGroup;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -28,8 +27,7 @@ public interface ForeignGroupRepository extends JpaRepository<ForeignGroup, Long
     public List<ForeignGroup> findByMainGroupIdConversionAndIdForeignGroup(Long idForeignGroup);
 
  /**
-  *  Создание подчиненной записи idForeignGroup, та же ситуация при запросе, что и в MainGroup.
-  *  Здесь как то нужно реализовать, чтобы подчинен запись(idForeignGroup) создавалась и распределялась в нужный idGroup
+  * Создание подчиненной записи idForeignGroup.
   */
     public ForeignGroup saveAndFlush(ForeignGroup foreignGroup);
 

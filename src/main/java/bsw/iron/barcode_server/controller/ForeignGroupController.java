@@ -1,7 +1,6 @@
 package bsw.iron.barcode_server.controller;
 
 import bsw.iron.barcode_server.entity.ForeignGroup;
-import bsw.iron.barcode_server.entity.MainGroup;
 import bsw.iron.barcode_server.service.ForeignGroupService;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,8 +23,8 @@ public class ForeignGroupController {
     }
 
     @PostMapping("/create/foreignGroup")
-    public ForeignGroup saveAndFlush( @RequestBody ForeignGroup foreignGroup) {
-        return foreignGroupService.saveAndFlush(foreignGroup);
+    public ForeignGroup addIdForeign(@RequestBody ForeignGroup foreignGroup) {
+        return foreignGroupService.addIdForeign(foreignGroup);
     }
 
     @GetMapping("/getAllByIdForeignGroup")
