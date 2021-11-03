@@ -16,19 +16,19 @@ public interface MainGroupRepository extends JpaRepository<MainGroup, Long> {
     @Query("SELECT mg FROM MainGroup mg WHERE mg.idConversion.idConversion = 11690")
     public List<MainGroup> findAllByIdConversion();
 
- /**
-  *  Создание главной записи idMain, но почему то при запросе нужно в Body указывать все параметры именно со связями которые описаны в Entity MainGroup
-  *  и указывать idGroup,хотя должен срабатывать sequence.?????????
-  *  По идее idGroup должен sequence генерировать, idPeredel всегда будет равен 11690,а дата чтобы всегда текущая была.
-  *  Снизу пытался @Query задать, но почему-то не вышло.
-  */
+    /**
+     * Создание главной записи idMain
+     */
 //    @Query(value="INSERT INTO MAIN_GROUP (ID_GROUP,ID_PEREDEL,DATE_CREATE) VALUES (MAIN_GROUP_SEQ.NEXTVAL, '11690', SYSDATE)",nativeQuery = true)
     public MainGroup saveAndFlush(MainGroup mainGroup);
 
- /**
-  * Поиск нужной idGroup записи по заданному idGroup в главной таблице:
-  */
+    /**
+     * Поиск нужной idGroup записи по заданному idGroup в главной таблице:
+     */
     public List<MainGroup> findByIdGroup(Long idGroup);
+
+    @Query("SELECT mg.idGroup FROM MainGroup mg WHERE mg.idConversion.idConversion = 11690 ORDER BY mg.dateCreate DESC")
+    public List<String> findAllByIdConversionOrderByDateCreateDateCreateDesc();
 
 
 }

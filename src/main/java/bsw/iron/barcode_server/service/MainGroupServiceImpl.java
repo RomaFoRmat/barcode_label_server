@@ -68,4 +68,9 @@ public class MainGroupServiceImpl implements MainGroupService {
     public List<MainGroup> findByIdGroup(Long idGroup) {
         return mainGroupRepository.findByIdGroup(idGroup);
     }
+
+    @Override
+    public List<String> findAllByIdConversionOrderByDateCreateDateCreateDesc() {
+        return mainGroupRepository.findAllByIdConversionOrderByDateCreateDateCreateDesc();
+    }
 }

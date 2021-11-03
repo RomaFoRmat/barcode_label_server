@@ -17,7 +17,7 @@ public class MainGroupController {
         this.mainGroupService = mainGroupService;
     }
 
-    @GetMapping("getAllByConversion11690/idMainGroup")
+    @GetMapping("/getAllByConversion11690/idMainGroup")
     public List<MainGroup> findAllByIdConversion() {
         return mainGroupService.findAllByIdConversion();
     }
@@ -31,7 +31,12 @@ public class MainGroupController {
 
 
     @GetMapping("/getIdGroupByConversion11690/{idGroup}")
-    public List<MainGroup> showMainGroupsByIdGroup(@PathVariable Long idGroup) {
+    public List<MainGroup> findByIdGroup(@PathVariable Long idGroup) {
         return mainGroupService.findByIdGroup(idGroup);
+    }
+
+    @GetMapping("/getAllIdGroup")
+    public List<String> getAllIdGroup() {
+        return mainGroupService.findAllByIdConversionOrderByDateCreateDateCreateDesc();
     }
 }

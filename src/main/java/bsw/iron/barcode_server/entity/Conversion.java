@@ -22,7 +22,7 @@ public class Conversion {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "group_id")
-    private GroupPeredel idGroup;
+    private GroupConversion idGroup;
 //
 //    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name="id_group")

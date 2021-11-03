@@ -11,4 +11,6 @@ public interface MainGroupService {
     public MainGroup addIdMain(MainGroup mainGroup);
 
     public List<MainGroup> findByIdGroup(Long idGroup);
+
+    public List<String> findAllByIdConversionOrderByDateCreateDateCreateDesc();
 }

@@ -1,6 +1,5 @@
 package bsw.iron.barcode_server.service;
 
-import bsw.iron.barcode_server.entity.Code;
 import bsw.iron.barcode_server.repository.CodeRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +15,7 @@ public class CodeServiceImpl implements CodeService {
     }
 
     @Override
-    public List<Code> findAllByConversionIdConversion() {
+    public List<String> findAllByConversionIdConversion() {
         return codeRepository.findAllByConversionIdConversion();
     }
 }

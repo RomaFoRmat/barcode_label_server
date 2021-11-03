@@ -19,7 +19,7 @@ public class TestLabel {
 
     @Id
     @Column(name = "ID_FOREING_GROUP")
-    private Long id_foreing_group;
+    private Long id_foreign_group;
 
     @Column(name = "ID_GROUP")
     private Long id_group;

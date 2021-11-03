@@ -10,4 +10,5 @@ public interface TestLabelService {
     public List<TestLabel> findByNumberSpool(String numberSpool);
 
     public List<TestLabel> findAll();
+
 }

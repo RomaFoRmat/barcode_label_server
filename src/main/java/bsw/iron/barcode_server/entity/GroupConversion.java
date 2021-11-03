@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Entity
 @Table(name = "GROUP_PEREDEL", schema = "LABCZL")
-public class GroupPeredel {
+public class GroupConversion {
 
    @Id
    @Column(name = "GROUP_ID")
