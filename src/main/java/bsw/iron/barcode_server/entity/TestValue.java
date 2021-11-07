@@ -11,7 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "TEST_VALUE", schema = "LABCZL")
+@Table(name = "TEST_VALUE", schema = "HR")
 public class TestValue {
 
     //Композитный PK

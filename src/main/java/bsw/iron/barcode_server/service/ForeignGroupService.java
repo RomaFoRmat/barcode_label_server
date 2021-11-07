@@ -6,9 +6,7 @@ import java.util.List;
 
 public interface ForeignGroupService {
 
-
     public List<ForeignGroup> findByMainGroupIdConversionAndIdForeignGroup(Long idForeignGroup);
-
 
     public ForeignGroup addIdForeign(ForeignGroup foreignGroup);
 

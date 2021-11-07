@@ -6,32 +6,32 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
-@Table(name = "PERSONALS", schema = "LABCZL")
+//@Data
+//@AllArgsConstructor
+//@NoArgsConstructor
+//@Entity
+//@Table(name = "PERSONALS", schema = "HR")
 public class Personals {
-
-    @Id
-    @Column(name = "ID_PERSONAL")
-    private Integer idPersonal;
-
-    @Column(name = "FIO")
-    private String fio;
-
-    @Column(name = "TAB_NOMER")
-    private Integer personnelNumber;
-
-    @Column(name = "PASWORD")
-    private String password;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ID_GROUP")
-    private GroupsOfPersonal groupsOfPersonal;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ID_LABORATORY")
-    private Laboratory laboratory;
+//
+//    @Id
+//    @Column(name = "ID_PERSONAL")
+//    private Integer idPersonal;
+//
+//    @Column(name = "FIO")
+//    private String fio;
+//
+//    @Column(name = "TAB_NOMER")
+//    private Integer personnelNumber;
+//
+//    @Column(name = "PASWORD")
+//    private String password;
+//
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "ID_GROUP")
+//    private GroupsOfPersonal groupsOfPersonal;
+//
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "ID_LABORATORY")
+//    private Laboratory laboratory;
 
 }

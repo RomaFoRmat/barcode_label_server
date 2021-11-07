@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "GROUP_PEREDEL", schema = "LABCZL")
+@Table(name = "GROUP_PEREDEL", schema = "HR")
 public class GroupConversion {
 
    @Id

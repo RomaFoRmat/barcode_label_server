@@ -2,6 +2,7 @@ package bsw.iron.barcode_server.service;
 
 import bsw.iron.barcode_server.entity.Conversion;
 import bsw.iron.barcode_server.entity.ForeignGroup;
+import bsw.iron.barcode_server.entity.MainGroup;
 import bsw.iron.barcode_server.entity.TestValue;
 import bsw.iron.barcode_server.repository.ConversionRepository;
 import bsw.iron.barcode_server.repository.ForeignGroupRepository;
@@ -41,9 +42,9 @@ public class ForeignGroupServiceImpl implements ForeignGroupService {
                 .orElseThrow(() -> new IllegalArgumentException("Conversion was not found"));
 //        для проверки создания:
 
-//        MainGroup mainGroup = mainGroupRepository.findById(1977541L)
-//                .orElseThrow(()-> new IllegalArgumentException("IdGroup was not found"));
-//        foreignGroup.setMainGroup(mainGroup)
+        MainGroup mainGroup = mainGroupRepository.findById(foreignGroup.getMainGroup().getIdGroup())
+                .orElseThrow(()-> new IllegalArgumentException("IdGroup was not found"));
+        foreignGroup.setMainGroup(mainGroup);
         ForeignGroup createdForeignGroup = foreignGroupRepository.saveAndFlush(foreignGroup);
 
         TestValue testValue = new TestValue();
@@ -54,7 +55,6 @@ public class ForeignGroupServiceImpl implements ForeignGroupService {
 //        testValue.setTextValue("Test");
         testValue.setIdConversion(conversion.getIdConversion());
         testValueRepository.saveAndFlush(testValue);
-
 
         return createdForeignGroup;
     }

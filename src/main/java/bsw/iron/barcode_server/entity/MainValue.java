@@ -11,7 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "MAIN_VOLUE", schema = "LABCZL")
+@Table(name = "MAIN_VOLUE", schema = "HR")
 public class MainValue {
 
 //Составной PK

@@ -9,17 +9,17 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
-@Table(name = "GROUPS_OF_PERSONALS", schema = "LABCZL")
+//@Data
+//@AllArgsConstructor
+//@NoArgsConstructor
+//@Entity
+//@Table(name = "GROUPS_OF_PERSONALS", schema = "HR")
 public class GroupsOfPersonal {
 
-    @Id
-    @Column(name = "ID_GROUP")
-    private Integer idGroup;
-
-    @Column(name = "NAME_GROUP")
-    private String nameGroup;
+//    @Id
+//    @Column(name = "ID_GROUP")
+//    private Integer idGroup;
+//
+//    @Column(name = "NAME_GROUP")
+//    private String nameGroup;
 }

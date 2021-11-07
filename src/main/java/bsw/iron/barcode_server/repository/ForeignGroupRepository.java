@@ -10,8 +10,6 @@ import java.util.List;
 @Repository
 public interface ForeignGroupRepository extends JpaRepository<ForeignGroup, Long> {
 
-
-
 /**
  *  Поиск всех значений  idForeignGroup для передела 11690
  *
