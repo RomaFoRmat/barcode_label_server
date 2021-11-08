@@ -5,7 +5,7 @@ import bsw.iron.barcode_server.repository.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -36,7 +36,7 @@ public class MainGroupServiceImpl implements MainGroupService {
         Conversion conversion = conversionRepository.findById(11690)
                 .orElseThrow(() -> new IllegalArgumentException("Conversion was not found"));
         mainGroup.setIdConversion(conversion);
-        mainGroup.setDateCreate(LocalDate.now());
+        mainGroup.setDateCreate(LocalDateTime.now());
         MainGroup createdMainGroup = mainGroupRepository.saveAndFlush(mainGroup);
 
         MainValue mainValue = new MainValue();
@@ -54,10 +54,10 @@ public class MainGroupServiceImpl implements MainGroupService {
 
         TestValue testValue = new TestValue();
         TestValue.TestValuePrimaryKey testValuePrimaryKey = new TestValue.TestValuePrimaryKey();
-        testValuePrimaryKey.setIdTestHead(11697L);
+//        testValuePrimaryKey.setIdTestHead(11697L);
         testValuePrimaryKey.setIdForeign(foreignGroup.getIdForeignGroup());
         testValue.setTestValuePrimaryKey(testValuePrimaryKey);
-        testValue.setTextValue("TEST");
+//        testValue.setTextValue("TEST");
         testValue.setIdConversion(conversion.getIdConversion());
         testValueRepository.saveAndFlush(testValue);
 

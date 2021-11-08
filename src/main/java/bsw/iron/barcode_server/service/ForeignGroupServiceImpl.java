@@ -42,8 +42,11 @@ public class ForeignGroupServiceImpl implements ForeignGroupService {
                 .orElseThrow(() -> new IllegalArgumentException("Conversion was not found"));
 //        для проверки создания:
 
+//        MainGroup mainGroup = mainGroupRepository.findById(1977541L)
+//                .orElseThrow(()-> new IllegalArgumentException("IdGroup was not found"));
+
         MainGroup mainGroup = mainGroupRepository.findById(foreignGroup.getMainGroup().getIdGroup())
-                .orElseThrow(()-> new IllegalArgumentException("IdGroup was not found"));
+                .orElseThrow(() -> new IllegalArgumentException("IdGroup was not found"));
         foreignGroup.setMainGroup(mainGroup);
         ForeignGroup createdForeignGroup = foreignGroupRepository.saveAndFlush(foreignGroup);
 

@@ -5,13 +5,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "MAIN_GROUP", schema = "HR")
+@Table(name = "MAIN_GROUP", schema = "LABCZL")
 
 public class MainGroup {
 
@@ -26,7 +26,7 @@ public class MainGroup {
     private Conversion idConversion;
 
     @Column(name = "DATE_CREATE")
-    private LocalDate dateCreate;
+    private LocalDateTime dateCreate;
 
 //    @OneToMany(cascade = CascadeType.ALL )
 //    @JoinColumn(name="ID_GROUP")

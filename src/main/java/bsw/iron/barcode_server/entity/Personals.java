@@ -1,16 +1,10 @@
 package bsw.iron.barcode_server.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-
 //@Data
 //@AllArgsConstructor
 //@NoArgsConstructor
 //@Entity
-//@Table(name = "PERSONALS", schema = "HR")
+//@Table(name = "PERSONALS", schema = "LABCZL")
 public class Personals {
 //
 //    @Id

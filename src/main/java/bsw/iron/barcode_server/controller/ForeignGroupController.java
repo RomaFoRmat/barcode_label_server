@@ -35,8 +35,13 @@ public class ForeignGroupController {
         return foreignGroupService.addIdForeign(value).getIdForeignGroup();
     }
 
+//    @PostMapping("/create/foreignGroup")
+//    public ForeignGroup addIdForeign(@RequestBody ForeignGroup foreignGroup) {
+//        return foreignGroupService.addIdForeign(foreignGroup);
+//    }
+
     @GetMapping("/getAllByIdForeignGroup")
-    public List<ForeignGroup> findAllByMainGroupIdConversionAndIdForeignGroup(){
+    public List<ForeignGroup> findAllByMainGroupIdConversionAndIdForeignGroup() {
         return foreignGroupService.findAllByMainGroupIdConversionAndIdForeignGroup();
     }
 }
