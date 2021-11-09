@@ -15,7 +15,7 @@ public class Conversion {
 
     @Id
     @Column(name = "ID_PEREDEL")
-    private Integer idConversion;
+    private Long idConversion;
 
     @Column(name = "NAME_PEREDEL")
     private String nameConversion;

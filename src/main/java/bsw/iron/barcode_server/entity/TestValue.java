@@ -27,7 +27,7 @@ public class TestValue {
     private Double value;
 
     @Column(name = "ID_PEREDEL")
-    private Integer idConversion;
+    private Long idConversion;
 
     @Embeddable
     @Data

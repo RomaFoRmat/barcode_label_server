@@ -33,7 +33,7 @@ public class MainGroupServiceImpl implements MainGroupService {
     @Override
     @Transactional
     public MainGroup addIdMain(MainGroup mainGroup) {
-        Conversion conversion = conversionRepository.findById(11690)
+        Conversion conversion = conversionRepository.findById(11690L)
                 .orElseThrow(() -> new IllegalArgumentException("Conversion was not found"));
         mainGroup.setIdConversion(conversion);
         mainGroup.setDateCreate(LocalDateTime.now());
@@ -41,7 +41,7 @@ public class MainGroupServiceImpl implements MainGroupService {
 
         MainValue mainValue = new MainValue();
         MainValue.MainValuePrimaryKey mainValuePrimaryKey = new MainValue.MainValuePrimaryKey();
-        mainValuePrimaryKey.setIdHead(11694L);
+        mainValuePrimaryKey.setIdHead(11691L);
         mainValuePrimaryKey.setIdGroup(createdMainGroup.getIdGroup());
         mainValue.setMainValuePrimaryKey(mainValuePrimaryKey);
         mainValue.setValue("TEST");

@@ -65,31 +65,31 @@ public class TestLabel {
     private Float straightforwardness1;
 
     @Column(name = "PR2")
-    private Float straightforwardness2;
+    private Double straightforwardness2;
 
     @Column(name = "PR3")
-    private Float straightforwardness3;
+    private Double straightforwardness3;
 
     @Column(name = "PR4")
-    private Float straightforwardness4;
+    private Double straightforwardness4;
 
     @Column(name = "PR5")
-    private Float straightforwardness5;
+    private Double straightforwardness5;
 
     @Column(name = "PRAVG")
-    private Float straightforwardnessAvg;
+    private Double straightforwardnessAvg;
 
 //    @Column(name = "STRAIGHT_ROPE")
-//    private Float straightforwardnessRope;
+//    private Double straightforwardnessRope;
 //
 //    @Column(name = "TORSION_ROPE") //В БД Неправильно указано название
-//    private Float torsRope;
+//    private Double torsRope;
 //
 //    @Column(name = "STRAIGHT_300")
-//    private Float straightforwardness300;
+//    private Double straightforwardness300;
 
     @Column(name = "TORSION")
-    private Float torsion;
+    private Double torsion;
 
 //    @Column(name = "CODEDEFECT")
 //    private String codeDefect;

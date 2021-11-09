@@ -23,7 +23,7 @@ public class MainValue {
     private String value;
 
     @Column(name = "NUMBER_VALUE")
-    private Float numberValue;
+    private Double numberValue;
 
 //    @Column(name = "DATE_VALUE")
 //    private LocalDate dateValue;

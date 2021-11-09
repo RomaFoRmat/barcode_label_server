@@ -15,7 +15,7 @@ public class TestHead {
 
     @Id
     @Column(name = "ID_TEST_HEAD")
-    private Integer idTestHead;
+    private Long idTestHead;
 
     @ManyToOne
     @JoinColumn(name = "ID_PEREDEL")

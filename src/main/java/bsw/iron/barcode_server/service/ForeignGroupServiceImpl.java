@@ -38,10 +38,9 @@ public class ForeignGroupServiceImpl implements ForeignGroupService {
     @Override
     @Transactional
     public ForeignGroup addIdForeign(ForeignGroup foreignGroup) {
-        Conversion conversion = conversionRepository.findById(11690)
+        Conversion conversion = conversionRepository.findById(11690L)
                 .orElseThrow(() -> new IllegalArgumentException("Conversion was not found"));
 //        для проверки создания:
-
 //        MainGroup mainGroup = mainGroupRepository.findById(1977541L)
 //                .orElseThrow(()-> new IllegalArgumentException("IdGroup was not found"));
 
