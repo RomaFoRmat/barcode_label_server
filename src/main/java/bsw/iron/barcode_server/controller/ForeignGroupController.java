@@ -1,8 +1,10 @@
 package bsw.iron.barcode_server.controller;
 
 import bsw.iron.barcode_server.entity.ForeignGroup;
+import bsw.iron.barcode_server.entity.TestValueDTO;
 import bsw.iron.barcode_server.service.ForeignGroupService;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,10 +30,10 @@ public class ForeignGroupController {
 
     @PostMapping("/create/foreignGroup")
     @Transactional
-    public Long addIdForeign(@RequestBody String foreignGroup) throws JsonProcessingException {
+    public Long addIdForeign(@RequestBody String testValue) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new JavaTimeModule());
-        ForeignGroup value = mapper.readValue(foreignGroup, ForeignGroup.class);
+        List<TestValueDTO> value = mapper.readValue(testValue, new TypeReference<List<TestValueDTO>>() {});
         return foreignGroupService.addIdForeign(value).getIdForeignGroup();
     }
 

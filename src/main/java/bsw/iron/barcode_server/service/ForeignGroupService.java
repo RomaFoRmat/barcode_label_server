@@ -1,6 +1,7 @@
 package bsw.iron.barcode_server.service;
 
 import bsw.iron.barcode_server.entity.ForeignGroup;
+import bsw.iron.barcode_server.entity.TestValueDTO;
 
 import java.util.List;
 
@@ -8,7 +9,8 @@ public interface ForeignGroupService {
 
     public List<ForeignGroup> findByMainGroupIdConversionAndIdForeignGroup(Long idForeignGroup);
 
-    public ForeignGroup addIdForeign(ForeignGroup foreignGroup);
+
+    public ForeignGroup addIdForeign(List<TestValueDTO> testValueDTOs);
 
     public List<ForeignGroup> findAllByMainGroupIdConversionAndIdForeignGroup();
 
