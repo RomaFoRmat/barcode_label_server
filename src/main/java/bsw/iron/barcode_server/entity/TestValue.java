@@ -6,12 +6,13 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "TEST_VALUE", schema = "HR")
+@Table(name = "TEST_VALUE", schema = "LABCZL")
 public class TestValue {
 
     //Композитный PK
@@ -25,6 +26,9 @@ public class TestValue {
 
     @Column(name = "VALUE")
     private Double value;
+
+    @Column(name = "DATE_VALUE")
+    private LocalDate dateValue;
 
     @Column(name = "ID_PEREDEL")
     private Long idConversion;

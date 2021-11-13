@@ -6,18 +6,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "CODE", schema = "HR")
+@Table(name = "CODE", schema = "LABCZL")
 public class Code {
 
     @Id
     @Column(name = "ID_KOD")
-    private String idCode;
+    private Long idCode;
 
     @Column(name = "KOD")
     private String code;
@@ -29,14 +28,14 @@ public class Code {
     @JoinColumn(name = "ID_PEREDEL")
     private Conversion conversion;
 
-    @Column(name = "DATE_EDIT")
-    private LocalDate dateEdit;
+//    @Column(name = "DATE_EDIT")
+//    private LocalDate dateEdit;
 
 //    @Column(name = "WHOO_EDIT")
 //    private String whoEdit;
 
-    @Column(name = "KOD_SAP")
-    private String codeSap;
+//    @Column(name = "KOD_SAP")
+//    private String codeSap;
 
     @Column(name = "VISIBLE")
     private Boolean visible;

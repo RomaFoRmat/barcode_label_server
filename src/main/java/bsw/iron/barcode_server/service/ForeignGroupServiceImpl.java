@@ -1,6 +1,10 @@
 package bsw.iron.barcode_server.service;
 
-import bsw.iron.barcode_server.entity.*;
+import bsw.iron.barcode_server.entity.Conversion;
+import bsw.iron.barcode_server.entity.ForeignGroup;
+import bsw.iron.barcode_server.entity.MainGroup;
+import bsw.iron.barcode_server.entity.TestValue;
+import bsw.iron.barcode_server.entity.dto.TestValueDTO;
 import bsw.iron.barcode_server.repository.ConversionRepository;
 import bsw.iron.barcode_server.repository.ForeignGroupRepository;
 import bsw.iron.barcode_server.repository.MainGroupRepository;
@@ -65,6 +69,7 @@ public class ForeignGroupServiceImpl implements ForeignGroupService {
             testValue.setIdConversion(testValueDTO.getIdConversion());
             testValue.setTextValue(testValueDTO.getTextValue());
             testValue.setValue(testValueDTO.getValue());
+            testValue.setDateValue(testValueDTO.getDateValue());
             testValueRepository.saveAndFlush(testValue);
         }
 

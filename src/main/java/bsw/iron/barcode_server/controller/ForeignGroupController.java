@@ -1,7 +1,7 @@
 package bsw.iron.barcode_server.controller;
 
 import bsw.iron.barcode_server.entity.ForeignGroup;
-import bsw.iron.barcode_server.entity.TestValueDTO;
+import bsw.iron.barcode_server.entity.dto.TestValueDTO;
 import bsw.iron.barcode_server.service.ForeignGroupService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;

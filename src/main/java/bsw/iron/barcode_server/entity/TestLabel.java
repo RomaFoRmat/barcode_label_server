@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "TEST_BARCODE_LABEL", schema = "HR")
+@Table(name = "TEST_BARCODE_LABEL", schema = "LABCZL")
 public class TestLabel {
 
     @Id
@@ -37,8 +37,8 @@ public class TestLabel {
     @Column(name = "CONSTRUCT")
     private String construct;
 
-//    @Column(name = "CONSUMER_CODE")
-//    private String consumer_code;
+    @Column(name = "CONSUMER_CODE")
+    private String consumer_code;
 
     @Column(name = "LOT")
     private String lot;
@@ -61,32 +61,35 @@ public class TestLabel {
     @Column(name = "SVAR")
     private Integer welds;
 
+    @Column(name = "PR0")
+    private Double straightforwardness600_0;
+
     @Column(name = "PR1")
-    private Float straightforwardness1;
+    private Double straightforwardness600_1;
 
     @Column(name = "PR2")
-    private Double straightforwardness2;
+    private Double straightforwardness600_2;
 
     @Column(name = "PR3")
-    private Double straightforwardness3;
+    private Double straightforwardness600_3;
 
     @Column(name = "PR4")
-    private Double straightforwardness4;
+    private Double straightforwardness600_4;
 
     @Column(name = "PR5")
-    private Double straightforwardness5;
+    private Double straightforwardness600_5;
 
     @Column(name = "PRAVG")
-    private Double straightforwardnessAvg;
+    private Double straightforwardness600Avg;
 
-//    @Column(name = "STRAIGHT_ROPE")
-//    private Double straightforwardnessRope;
-//
-//    @Column(name = "TORSION_ROPE") //В БД Неправильно указано название
-//    private Double torsRope;
-//
-//    @Column(name = "STRAIGHT_300")
-//    private Double straightforwardness300;
+    @Column(name = "STRAIGHT_ROPE")
+    private Double straightforwardnessRope;
+
+    @Column(name = "TORSION_ROPE") //В БД Неправильно указано название
+    private Double torsRope;
+
+    @Column(name = "STRAIGHT_300")
+    private Double straightforwardness300;
 
     @Column(name = "TORSION")
     private Double torsion;
