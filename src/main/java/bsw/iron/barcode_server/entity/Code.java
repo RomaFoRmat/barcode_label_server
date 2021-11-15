@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
@@ -14,9 +15,8 @@ import javax.persistence.*;
 @Table(name = "CODE", schema = "LABCZL")
 public class Code {
 
-    @Id
-    @Column(name = "ID_KOD")
-    private Long idCode;
+    @EmbeddedId
+    private CodePrimaryKey codePrimaryKey;
 
     @Column(name = "KOD")
     private String code;
@@ -24,19 +24,21 @@ public class Code {
     @Column(name = "OPISANIE")
     private String description;
 
-    @ManyToOne
-    @JoinColumn(name = "ID_PEREDEL")
-    private Conversion conversion;
-
-//    @Column(name = "DATE_EDIT")
-//    private LocalDate dateEdit;
-
-//    @Column(name = "WHOO_EDIT")
-//    private String whoEdit;
-
-//    @Column(name = "KOD_SAP")
-//    private String codeSap;
-
     @Column(name = "VISIBLE")
     private Boolean visible;
+
+    @Embeddable
+    @Data
+    @NoArgsConstructor
+    public static class CodePrimaryKey implements Serializable {
+
+        @Column(name = "ID_KOD")
+        private Long idCode;
+
+        @ManyToOne
+        @JoinColumn(name = "ID_PEREDEL")
+        private Conversion conversion;
+
+    }
+
 }

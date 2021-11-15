@@ -44,7 +44,7 @@ public class MainGroupServiceImpl implements MainGroupService {
         mainValuePrimaryKey.setIdHead(11691L);
         mainValuePrimaryKey.setIdGroup(createdMainGroup.getIdGroup());
         mainValue.setMainValuePrimaryKey(mainValuePrimaryKey);
-        mainValue.setValue("TEST");
+        mainValue.setValue("1267067"); //4612  -99017500/ BS-80/33 /3x0.20+6x0.35HT /  /ÍÊØ  ð
         mainValueRepository.saveAndFlush(mainValue);
 
         ForeignGroup foreignGroup = new ForeignGroup();
