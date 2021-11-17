@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -19,17 +20,20 @@ public class TestLabel {
 
     @Id
     @Column(name = "ID_FOREING_GROUP")
-    private Long id_foreign_group;
+    private Long idForeignGroup;
 
     @Column(name = "ID_GROUP")
-    private Long id_group;
+    private Long idGroup;
 
-//    @Id
+    //    @Id
     @Column(name = "NUMBERSPOOL")
     private String numberSpool;
 
     @Column(name = "DATE_CREATE")
-    private LocalDate date_create;
+    private LocalDateTime dateCreate;
+
+    @Column(name = "DATAMARK")
+    private LocalDate dateRope;
 
     @Column(name = "KOD")
     private String code;
@@ -38,7 +42,7 @@ public class TestLabel {
     private String construct;
 
     @Column(name = "CONSUMER_CODE")
-    private String consumer_code;
+    private String consumerCode;
 
     @Column(name = "LOT")
     private String lot;
@@ -53,7 +57,13 @@ public class TestLabel {
     private String typeSpool;
 
     @Column(name = "NTAB")
-    private String personal_rope;
+    private String personalRope;
+
+    @Column(name = "NSVAR")
+    private Double numberWeldingMachine;
+
+    @Column(name = "NKANMASH")
+    private Double numberRopeMachine;
 
     @Column(name = "LENGHTH")
     private Integer length;
@@ -94,7 +104,7 @@ public class TestLabel {
     @Column(name = "TORSION")
     private Double torsion;
 
-//    @Column(name = "CODEDEFECT")
-//    private String codeDefect;
+    @Column(name = "CODEDEFECT")
+    private String codeDefect;
 
 }
