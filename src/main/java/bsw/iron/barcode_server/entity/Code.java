@@ -12,7 +12,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "CODE", schema = "LABCZL")
+@Table(name = "CODE", schema = "HR")
 public class Code {
 
     @EmbeddedId
@@ -41,4 +41,5 @@ public class Code {
 
     }
 
+    
 }

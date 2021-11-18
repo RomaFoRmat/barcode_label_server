@@ -1,6 +1,8 @@
 package bsw.iron.barcode_server.service;
 
 import bsw.iron.barcode_server.entity.*;
+import bsw.iron.barcode_server.entity.dto.MainValueDTO;
+import bsw.iron.barcode_server.entity.dto.TestValueDTO;
 import bsw.iron.barcode_server.repository.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,34 +34,51 @@ public class MainGroupServiceImpl implements MainGroupService {
 
     @Override
     @Transactional
-    public MainGroup addIdMain(MainGroup mainGroup) {
+    public MainGroup addIdMain(List<MainValueDTO> mainValueDTOs) {
         Conversion conversion = conversionRepository.findById(11690L)
                 .orElseThrow(() -> new IllegalArgumentException("Conversion was not found"));
+
+        MainGroup mainGroup = new MainGroup();
         mainGroup.setIdConversion(conversion);
         mainGroup.setDateCreate(LocalDateTime.now());
         MainGroup createdMainGroup = mainGroupRepository.saveAndFlush(mainGroup);
 
-        MainValue mainValue = new MainValue();
-        MainValue.MainValuePrimaryKey mainValuePrimaryKey = new MainValue.MainValuePrimaryKey();
-        mainValuePrimaryKey.setIdHead(11691L);
-        mainValuePrimaryKey.setIdGroup(createdMainGroup.getIdGroup());
-        mainValue.setMainValuePrimaryKey(mainValuePrimaryKey);
-        mainValue.setValue("1267067"); //4612  -99017500/ BS-80/33 /3x0.20+6x0.35HT /  /ÍÊØ  ð
-        mainValueRepository.saveAndFlush(mainValue);
+        for (MainValueDTO mainValueDTO : mainValueDTOs){
+            MainValue mainValue = new MainValue();
+            MainValue.MainValuePrimaryKey mainValuePrimaryKey = new MainValue.MainValuePrimaryKey();
+            mainValuePrimaryKey.setIdHead(mainValueDTO.getIdHead());
+            mainValuePrimaryKey.setIdGroup(createdMainGroup.getIdGroup());
+            mainValue.setMainValuePrimaryKey(mainValuePrimaryKey);
+//            testValue.setIdConversion(testValueDTO.getIdConversion());
+            mainValue.setValue(mainValueDTO.getValue());
+            mainValue.setNumberValue(mainValueDTO.getNumberValue());
+            mainValueRepository.saveAndFlush(mainValue);
+        }
 
-        ForeignGroup foreignGroup = new ForeignGroup();
-        foreignGroup.setMainGroup(createdMainGroup);
-        foreignGroupRepository.saveAndFlush(foreignGroup);
+
+//        MainValue mainValue = new MainValue();
+//        MainValue.MainValuePrimaryKey mainValuePrimaryKey = new MainValue.MainValuePrimaryKey();
+//        mainValuePrimaryKey.setIdHead(11691L);
+//        mainValuePrimaryKey.setIdGroup(createdMainGroup.getIdGroup());
+//        mainValue.setMainValuePrimaryKey(mainValuePrimaryKey);
+//        mainValue.setValue("1267067"); //4612  -99017500/ BS-80/33 /3x0.20+6x0.35HT /  /ÍÊØ  ð
+//        mainValueRepository.saveAndFlush(mainValue);
+
+//        ForeignGroup foreignGroup = new ForeignGroup();
+//        foreignGroup.setMainGroup(createdMainGroup);
+//        foreignGroupRepository.saveAndFlush(foreignGroup);
+//
+//
+//        TestValue testValue = new TestValue();
+//        TestValue.TestValuePrimaryKey testValuePrimaryKey = new TestValue.TestValuePrimaryKey();
+////        testValuePrimaryKey.setIdTestHead(11697L);
+//        testValuePrimaryKey.setIdForeign(foreignGroup.getIdForeignGroup());
+//        testValue.setTestValuePrimaryKey(testValuePrimaryKey);
+////        testValue.setTextValue("TEST");
+//        testValue.setIdConversion(conversion.getIdConversion());
+//        testValueRepository.saveAndFlush(testValue);
 
 
-        TestValue testValue = new TestValue();
-        TestValue.TestValuePrimaryKey testValuePrimaryKey = new TestValue.TestValuePrimaryKey();
-//        testValuePrimaryKey.setIdTestHead(11697L);
-        testValuePrimaryKey.setIdForeign(foreignGroup.getIdForeignGroup());
-        testValue.setTestValuePrimaryKey(testValuePrimaryKey);
-//        testValue.setTextValue("TEST");
-        testValue.setIdConversion(conversion.getIdConversion());
-        testValueRepository.saveAndFlush(testValue);
 
         return createdMainGroup;
     }
