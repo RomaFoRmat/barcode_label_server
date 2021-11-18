@@ -15,7 +15,7 @@ public interface TestLabelRepository extends JpaRepository<TestLabel, Long> {
     public List<TestLabel> findByNumberSpool(String numberSpool);
 
 
-    @Query("SELECT tl FROM TestLabel tl ORDER BY tl.date_create DESC")
+    @Query("SELECT tl FROM TestLabel tl ORDER BY tl.dateCreate DESC")
     public List<TestLabel> findAll();
 
 
