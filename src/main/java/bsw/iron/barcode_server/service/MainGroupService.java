@@ -1,9 +1,7 @@
 package bsw.iron.barcode_server.service;
 
-import bsw.iron.barcode_server.entity.ForeignGroup;
 import bsw.iron.barcode_server.entity.MainGroup;
 import bsw.iron.barcode_server.entity.dto.MainValueDTO;
-import bsw.iron.barcode_server.entity.dto.TestValueDTO;
 
 import java.util.List;
 

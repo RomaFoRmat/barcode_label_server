@@ -1,7 +1,6 @@
 package bsw.iron.barcode_server.entity.dto;
 
 import bsw.iron.barcode_server.entity.Code;
-import bsw.iron.barcode_server.entity.Conversion;
 import lombok.Data;
 
 @Data

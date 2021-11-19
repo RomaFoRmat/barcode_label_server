@@ -1,8 +1,9 @@
 package bsw.iron.barcode_server.service;
 
-import bsw.iron.barcode_server.entity.*;
+import bsw.iron.barcode_server.entity.Conversion;
+import bsw.iron.barcode_server.entity.MainGroup;
+import bsw.iron.barcode_server.entity.MainValue;
 import bsw.iron.barcode_server.entity.dto.MainValueDTO;
-import bsw.iron.barcode_server.entity.dto.TestValueDTO;
 import bsw.iron.barcode_server.repository.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,13 +44,12 @@ public class MainGroupServiceImpl implements MainGroupService {
         mainGroup.setDateCreate(LocalDateTime.now());
         MainGroup createdMainGroup = mainGroupRepository.saveAndFlush(mainGroup);
 
-        for (MainValueDTO mainValueDTO : mainValueDTOs){
+        for (MainValueDTO mainValueDTO : mainValueDTOs) {
             MainValue mainValue = new MainValue();
             MainValue.MainValuePrimaryKey mainValuePrimaryKey = new MainValue.MainValuePrimaryKey();
             mainValuePrimaryKey.setIdHead(mainValueDTO.getIdHead());
             mainValuePrimaryKey.setIdGroup(createdMainGroup.getIdGroup());
             mainValue.setMainValuePrimaryKey(mainValuePrimaryKey);
-//            testValue.setIdConversion(testValueDTO.getIdConversion());
             mainValue.setValue(mainValueDTO.getValue());
             mainValue.setNumberValue(mainValueDTO.getNumberValue());
             mainValueRepository.saveAndFlush(mainValue);
@@ -77,7 +77,6 @@ public class MainGroupServiceImpl implements MainGroupService {
 ////        testValue.setTextValue("TEST");
 //        testValue.setIdConversion(conversion.getIdConversion());
 //        testValueRepository.saveAndFlush(testValue);
-
 
 
         return createdMainGroup;
