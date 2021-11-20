@@ -23,6 +23,14 @@ public interface MainValueRepository extends JpaRepository<MainValue, Long> {
 
 
     /**
+     * Получение последнего max значения "протокол"
+     *
+     */
+    @Query(value ="SELECT MAX (NUMBER_VALUE) FROM MAIN_VOLUE WHERE ID_HEAD = 1889350 ORDER BY NUMBER_VALUE DESC",nativeQuery = true )
+    public List<String> findFirstByMainValuePrimaryKeyIdHeadOrderByNumberValueDesc();
+
+
+    /**
      * получение всех значений главной таблицы постранично
      */
 

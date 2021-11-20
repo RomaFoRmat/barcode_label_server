@@ -23,6 +23,11 @@ public class MainValueServiceImpl implements MainValueService {
     }
 
     @Override
+    public List<String> findFirstByMainValuePrimaryKeyIdHeadOrderByNumberValueDesc() {
+        return mainValueRepository.findFirstByMainValuePrimaryKeyIdHeadOrderByNumberValueDesc();
+    }
+
+    @Override
     public List<MainValue> findAll() {
         return mainValueRepository.findAll();
     }

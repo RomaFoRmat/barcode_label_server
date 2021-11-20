@@ -10,6 +10,8 @@ public interface MainValueService {
 
     public List<MainValue> findByMainValuePrimaryKeyIdHead(Long idHead);
 
+    public List<String> findFirstByMainValuePrimaryKeyIdHeadOrderByNumberValueDesc();
+
     public List<MainValue> findAll();
 
     public Page<MainValue> findAll(Pageable pageable);
