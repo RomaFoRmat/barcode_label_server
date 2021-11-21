@@ -45,7 +45,7 @@ public class MainGroupController {
     }
 
     @GetMapping("/getAllIdGroup")
-    public List<String> getAllIdGroup() {
+    public List<MainGroup> getAllIdGroup() {
         return mainGroupService.findAllByIdConversionOrderByDateCreateDateCreateDesc();
     }
 }

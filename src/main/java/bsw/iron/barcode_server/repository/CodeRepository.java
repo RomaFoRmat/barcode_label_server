@@ -15,7 +15,7 @@ public interface CodeRepository extends JpaRepository<Code, Long> {
  /**
   * Получить все коды с видимостью = 1 для передела 11690, это поле будет хранится в главной таблице в поле КОД как список текста
   */
- @Query("SELECT c FROM Code c WHERE c.codePrimaryKey.conversion.idConversion = 11690 AND c.visible = true ORDER BY c.description ")
+ @Query("SELECT c FROM Code c WHERE c.codePrimaryKey.conversion.idConversion = 11690 AND c.visible = true ORDER BY c.code ")
  public List<Code> findAllByConversionIdConversion();
 
 // @Query("SELECT c.description FROM Code c WHERE c.conversion.idConversion = 11690 AND c.visible = true ORDER BY c.description ")

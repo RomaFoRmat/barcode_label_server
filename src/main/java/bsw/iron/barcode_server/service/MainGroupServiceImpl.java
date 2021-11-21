@@ -89,7 +89,7 @@ public class MainGroupServiceImpl implements MainGroupService {
     }
 
     @Override
-    public List<String> findAllByIdConversionOrderByDateCreateDateCreateDesc() {
+    public List<MainGroup> findAllByIdConversionOrderByDateCreateDateCreateDesc() {
         return mainGroupRepository.findAllByIdConversionOrderByDateCreateDateCreateDesc();
     }
 }

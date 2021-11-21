@@ -13,7 +13,7 @@ public interface MainGroupService {
 
     public List<MainGroup> findByIdGroup(Long idGroup);
 
-    public List<String> findAllByIdConversionOrderByDateCreateDateCreateDesc();
+    public List<MainGroup> findAllByIdConversionOrderByDateCreateDateCreateDesc();
 
     public MainGroup addIdMain(List<MainValueDTO> mainValueDTOs);
 }
