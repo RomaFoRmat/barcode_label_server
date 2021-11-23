@@ -4,7 +4,7 @@ package bsw.iron.barcode_server.entity;
 //@AllArgsConstructor
 //@NoArgsConstructor
 //@Entity
-//@Table(name = "PERSONALS", schema = "LABCZL")
+//@Table(name = "PERSONALS", schema = "HR")
 public class Personals {
 //
 //    @Id

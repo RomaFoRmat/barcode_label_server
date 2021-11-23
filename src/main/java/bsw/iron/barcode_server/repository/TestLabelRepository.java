@@ -19,4 +19,7 @@ public interface TestLabelRepository extends JpaRepository<TestLabel, Long> {
     public List<TestLabel> findAll();
 
 
+    @Query( value = "SELECT * FROM TEST_BARCODE_LABEL  WHERE DATE_CREATE >= SYSDATE - 1  ORDER BY DATE_CREATE DESC",nativeQuery = true)
+    public List<TestLabel> findAllByDateCreate();
+
 }

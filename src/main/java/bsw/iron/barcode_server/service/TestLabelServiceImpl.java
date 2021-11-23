@@ -25,5 +25,10 @@ public class TestLabelServiceImpl implements TestLabelService{
         return testLabelRepository.findAll();
     }
 
+    @Override
+    public List<TestLabel> findAllByDateCreate() {
+        return testLabelRepository.findAllByDateCreate();
+    }
+
 
 }

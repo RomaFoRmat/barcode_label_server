@@ -11,4 +11,6 @@ public interface TestLabelService {
 
     public List<TestLabel> findAll();
 
+    public List<TestLabel> findAllByDateCreate();
+
 }
