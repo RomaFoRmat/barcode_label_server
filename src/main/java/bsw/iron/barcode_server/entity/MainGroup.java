@@ -25,8 +25,9 @@ public class MainGroup {
     @JoinColumn(name = "ID_PEREDEL")
     private Conversion idConversion;
 
-    @Column(name = "DATE_CREATE")
-    private LocalDateTime dateCreate;
+//    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+@Column(name = "DATE_CREATE")
+private LocalDateTime dateCreate;
 
 //    @OneToMany(cascade = CascadeType.ALL )
 //    @JoinColumn(name="ID_GROUP")

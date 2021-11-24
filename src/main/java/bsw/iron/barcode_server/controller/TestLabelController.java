@@ -30,5 +30,10 @@ public class TestLabelController {
         return testLabelService.findAll();
     }
 
+    @GetMapping("/allSpool/forTheLastDay")
+    public List<TestLabel> getAllSpoolsForTheLastDay() {
+        return testLabelService.findAllByDateCreate();
+    }
+
 
 }
