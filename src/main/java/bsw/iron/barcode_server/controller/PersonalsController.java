@@ -22,7 +22,7 @@ public class PersonalsController {
     }
 
     @GetMapping("/{password}")
-    public Personals getUser(@PathVariable String password) {
+    public List<Personals> getUser(@PathVariable String password) {
         try {
             return personalsService.findByPassword(password);
         } catch (Exception exc) {

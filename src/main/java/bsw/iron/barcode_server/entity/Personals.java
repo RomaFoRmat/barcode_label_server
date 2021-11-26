@@ -35,7 +35,5 @@ public class Personals implements Serializable {
     @JoinColumn(name = "ID_LABORATORY")
     private Laboratory laboratory;
 
-    @Transient
-    private String ipAddress;
 
 }

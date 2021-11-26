@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PersonalsService {
 
-    public Personals findByPassword(String password);
+    public List<Personals> findByPassword(String password);
 
     public List<Personals> findAll();
 }

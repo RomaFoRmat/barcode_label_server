@@ -18,7 +18,7 @@ public class PersonalsServiceImpl implements PersonalsService {
     }
 
     @Override
-    public Personals findByPassword(String password) {
+    public List<Personals> findByPassword(String password) {
         return personalsRepository.findByPassword(password);
     }
 
