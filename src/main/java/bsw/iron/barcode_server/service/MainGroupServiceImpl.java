@@ -1,6 +1,7 @@
 package bsw.iron.barcode_server.service;
 
 import bsw.iron.barcode_server.entity.Conversion;
+import bsw.iron.barcode_server.entity.DateTable;
 import bsw.iron.barcode_server.entity.MainGroup;
 import bsw.iron.barcode_server.entity.MainValue;
 import bsw.iron.barcode_server.entity.dto.MainValueDTO;
@@ -19,13 +20,15 @@ public class MainGroupServiceImpl implements MainGroupService {
     private final ForeignGroupRepository foreignGroupRepository;
     private final TestValueRepository testValueRepository;
     private final MainValueRepository mainValueRepository;
+    private final DateTableRepository dateTableRepository;
 
-    public MainGroupServiceImpl(MainGroupRepository mainGroupRepository, ConversionRepository conversionRepository, ForeignGroupRepository foreignGroupRepository, TestValueRepository testValueRepository, MainValueRepository mainValueRepository) {
+    public MainGroupServiceImpl(MainGroupRepository mainGroupRepository, ConversionRepository conversionRepository, ForeignGroupRepository foreignGroupRepository, TestValueRepository testValueRepository, MainValueRepository mainValueRepository, DateTableRepository dateTableRepository) {
         this.mainGroupRepository = mainGroupRepository;
         this.conversionRepository = conversionRepository;
         this.foreignGroupRepository = foreignGroupRepository;
         this.testValueRepository = testValueRepository;
         this.mainValueRepository = mainValueRepository;
+        this.dateTableRepository = dateTableRepository;
     }
 
     @Override
@@ -52,33 +55,15 @@ public class MainGroupServiceImpl implements MainGroupService {
             mainValue.setMainValuePrimaryKey(mainValuePrimaryKey);
             mainValue.setValue(mainValueDTO.getValue());
             mainValue.setNumberValue(mainValueDTO.getNumberValue());
+//            DateTable dateTable = new DateTable();
+//            DateTable.DateTableForeignKey dateTableForeignKey = new DateTable.DateTableForeignKey();
+//            dateTableForeignKey.setMainGroup(createdMainGroup);
+//            dateTable.setWhoCreate(mainValueDTO.getWhoCreate());
+//            dateTable.setDateCreate(LocalDateTime.now());
+//            dateTable.setIpAddressCreate(mainValueDTO.getIpAddressCreate());
+//            dateTableRepository.saveAndFlush(dateTable);
             mainValueRepository.saveAndFlush(mainValue);
         }
-
-
-
-//        MainValue mainValue = new MainValue();
-//        MainValue.MainValuePrimaryKey mainValuePrimaryKey = new MainValue.MainValuePrimaryKey();
-//        mainValuePrimaryKey.setIdHead(11691L);
-//        mainValuePrimaryKey.setIdGroup(createdMainGroup.getIdGroup());
-//        mainValue.setMainValuePrimaryKey(mainValuePrimaryKey);
-//        mainValue.setValue("1267067"); //4612  -99017500/ BS-80/33 /3x0.20+6x0.35HT /  /ÍÊØ  ð
-//        mainValueRepository.saveAndFlush(mainValue);
-
-//        ForeignGroup foreignGroup = new ForeignGroup();
-//        foreignGroup.setMainGroup(createdMainGroup);
-//        foreignGroupRepository.saveAndFlush(foreignGroup);
-//
-//
-//        TestValue testValue = new TestValue();
-//        TestValue.TestValuePrimaryKey testValuePrimaryKey = new TestValue.TestValuePrimaryKey();
-////        testValuePrimaryKey.setIdTestHead(11697L);
-//        testValuePrimaryKey.setIdForeign(foreignGroup.getIdForeignGroup());
-//        testValue.setTestValuePrimaryKey(testValuePrimaryKey);
-////        testValue.setTextValue("TEST");
-//        testValue.setIdConversion(conversion.getIdConversion());
-//        testValueRepository.saveAndFlush(testValue);
-
 
         return createdMainGroup;
     }

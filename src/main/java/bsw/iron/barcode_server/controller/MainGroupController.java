@@ -30,12 +30,13 @@ public class MainGroupController {
 
     @PostMapping("/addIdGroup")
     @ResponseStatus(code = HttpStatus.CREATED)
-    public Long addIdMain(@RequestBody String mainValue) throws JsonProcessingException {
+    public MainGroup addIdMain(@RequestBody String mainValue) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new JavaTimeModule());
         List<MainValueDTO> value = mapper.readValue(mainValue, new TypeReference<List<MainValueDTO>>() {
         });
-        return mainGroupService.addIdMain(value).getIdGroup();
+//        return mainGroupService.addIdMain(value).getIdGroup();
+        return mainGroupService.addIdMain(value);
     }
 
 
