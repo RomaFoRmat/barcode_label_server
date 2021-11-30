@@ -7,14 +7,17 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class MainValueDTO {
+public class MainGroupResponseDTO {
     private Long idGroup;
     private Long idHead;
     private String value;
     private Double numberValue;
     private Code code;
+//поля для DateTable
+    private DateTable.DateTableForeignKey dateTableForeignKey;
     private LocalDateTime dateCreate;
     private String whoCreate;
     private Long laboratory;
-    private DateTable.DateTableForeignKey dateTableForeignKey;
+    private String ipAddressCreate;
+
 }
