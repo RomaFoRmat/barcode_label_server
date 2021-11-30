@@ -1,7 +1,6 @@
 package bsw.iron.barcode_server.service;
 
 import bsw.iron.barcode_server.entity.Conversion;
-import bsw.iron.barcode_server.entity.DateTable;
 import bsw.iron.barcode_server.entity.MainGroup;
 import bsw.iron.barcode_server.entity.MainValue;
 import bsw.iron.barcode_server.entity.dto.MainValueDTO;
@@ -63,6 +62,7 @@ public class MainGroupServiceImpl implements MainGroupService {
 //            dateTable.setIpAddressCreate(mainValueDTO.getIpAddressCreate());
 //            dateTableRepository.saveAndFlush(dateTable);
             mainValueRepository.saveAndFlush(mainValue);
+
         }
 
         return createdMainGroup;

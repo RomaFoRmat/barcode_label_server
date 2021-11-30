@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "MAIN_GROUP", schema = "HR")
+@Table(name = "MAIN_GROUP", schema = "LABCZL")
 
 public class MainGroup {
 
@@ -25,9 +25,9 @@ public class MainGroup {
     @JoinColumn(name = "ID_PEREDEL")
     private Conversion idConversion;
 
-//    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-@Column(name = "DATE_CREATE")
-private LocalDateTime dateCreate;
+
+    @Column(name = "DATE_CREATE")
+    private LocalDateTime dateCreate;
 
 //    @OneToMany(cascade = CascadeType.ALL )
 //    @JoinColumn(name="ID_GROUP")

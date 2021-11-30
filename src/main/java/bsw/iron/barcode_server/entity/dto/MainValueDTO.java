@@ -13,10 +13,8 @@ public class MainValueDTO {
     private String value;
     private Double numberValue;
     private Code code;
-    private DateTable.DateTableForeignKey dateTableForeignKey;
-    private DateTable dateTable;
-    private String whoCreate;
     private LocalDateTime dateCreate;
+    private String whoCreate;
     private Long laboratory;
-    private String ipAddressCreate;
+    private DateTable.DateTableForeignKey dateTableForeignKey;
 }
