@@ -1,6 +1,7 @@
 package bsw.iron.barcode_server.controller;
 
 import bsw.iron.barcode_server.entity.MainGroup;
+import bsw.iron.barcode_server.entity.dto.MainGroupRequestDTO;
 import bsw.iron.barcode_server.entity.dto.MainGroupResponseDTO;
 import bsw.iron.barcode_server.service.MainGroupService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -30,12 +31,11 @@ public class MainGroupController {
 
     @PostMapping("/addIdGroup")
     @ResponseStatus(code = HttpStatus.CREATED)
-    public MainGroup addIdMain(@RequestBody String mainValue) throws JsonProcessingException {
+    public MainGroupResponseDTO addIdMain(@RequestBody String mainValue) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new JavaTimeModule());
-        List<MainGroupResponseDTO> value = mapper.readValue(mainValue, new TypeReference<List<MainGroupResponseDTO>>() {
+        MainGroupRequestDTO value = mapper.readValue(mainValue, new TypeReference<MainGroupRequestDTO>() {
         });
-//        return mainGroupService.addIdMain(value).getIdGroup();
         return mainGroupService.addIdMain(value);
     }
 

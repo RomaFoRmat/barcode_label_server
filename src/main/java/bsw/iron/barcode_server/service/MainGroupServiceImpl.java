@@ -4,7 +4,9 @@ import bsw.iron.barcode_server.entity.Conversion;
 import bsw.iron.barcode_server.entity.DateTable;
 import bsw.iron.barcode_server.entity.MainGroup;
 import bsw.iron.barcode_server.entity.MainValue;
+import bsw.iron.barcode_server.entity.dto.MainGroupRequestDTO;
 import bsw.iron.barcode_server.entity.dto.MainGroupResponseDTO;
+import bsw.iron.barcode_server.entity.dto.MainValueDTO;
 import bsw.iron.barcode_server.repository.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,7 +40,7 @@ public class MainGroupServiceImpl implements MainGroupService {
 
     @Override
     @Transactional
-    public MainGroup addIdMain(List<MainGroupResponseDTO> mainGroupResponseDTOS) {
+    public MainGroupResponseDTO addIdMain(MainGroupRequestDTO mainGroupRequestDTO) {
         Conversion conversion = conversionRepository.findById(11690L)
                 .orElseThrow(() -> new IllegalArgumentException("Conversion was not found"));
 
@@ -47,30 +49,33 @@ public class MainGroupServiceImpl implements MainGroupService {
         mainGroup.setDateCreate(LocalDateTime.now());
         MainGroup createdMainGroup = mainGroupRepository.saveAndFlush(mainGroup);
 
-        MainGroupResponseDTO dateTableCreate = mainGroupResponseDTOS.get(0);
-
         DateTable dateTable = new DateTable();
         DateTable.DateTableForeignKey dateTableForeignKey = new DateTable.DateTableForeignKey();
         dateTableForeignKey.setMainGroup(createdMainGroup);
         dateTable.setDateTableForeignKey(dateTableForeignKey);
-        dateTable.setWhoCreate(dateTableCreate.getWhoCreate());
+        dateTable.setWhoCreate(mainGroupRequestDTO.getWhoCreate());
         dateTable.setDateCreate(LocalDateTime.now());
-        dateTable.setIpAddressCreate(dateTableCreate.getIpAddressCreate());
-        dateTable.setLaboratory(dateTableCreate.getLaboratory());
+        dateTable.setIpAddressCreate(mainGroupRequestDTO.getIpAddressCreate());
+        dateTable.setLaboratory(mainGroupRequestDTO.getLaboratory());
         dateTableRepository.saveAndFlush(dateTable);
 
-        for (MainGroupResponseDTO mainGroupResponseDTO : mainGroupResponseDTOS) {
+        for (MainValueDTO mainValueDTO : mainGroupRequestDTO.getMainValueDTOList()) {
             MainValue mainValue = new MainValue();
             MainValue.MainValuePrimaryKey mainValuePrimaryKey = new MainValue.MainValuePrimaryKey();
-            mainValuePrimaryKey.setIdHead(mainGroupResponseDTO.getIdHead());
+            mainValuePrimaryKey.setIdHead(mainValueDTO.getIdHead());
             mainValuePrimaryKey.setIdGroup(createdMainGroup.getIdGroup());
             mainValue.setMainValuePrimaryKey(mainValuePrimaryKey);
-            mainValue.setValue(mainGroupResponseDTO.getValue());
-            mainValue.setNumberValue(mainGroupResponseDTO.getNumberValue());
-            mainValueRepository.saveAndFlush(mainValue);
+            mainValue.setValue(mainValueDTO.getValue());
+            mainValue.setNumberValue(mainValueDTO.getNumberValue());
 
+            mainValueRepository.saveAndFlush(mainValue);
         }
-        return createdMainGroup;
+        
+        MainGroupResponseDTO mainGroupResponseDTO = new MainGroupResponseDTO();
+        mainGroupResponseDTO.setMainGroup(createdMainGroup);
+        mainGroupResponseDTO.setDateTable(dateTable);
+
+        return mainGroupResponseDTO;
     }
 
     @Override

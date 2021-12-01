@@ -19,8 +19,9 @@ public interface MainGroupRepository extends JpaRepository<MainGroup, Long> {
     /**
      * Создание главной записи idMain
      */
-//    @Query(value="INSERT INTO MAIN_GROUP (ID_GROUP,ID_PEREDEL,DATE_CREATE) VALUES (MAIN_GROUP_SEQ.NEXTVAL, '11690', SYSDATE)",nativeQuery = true)
+
     public MainGroup saveAndFlush(MainGroup mainGroup);
+//    public MainGroupResponseDTO saveAndFlush(MainGroupRequestDTO mainGroupRequestDTO);
 
    /**
     * Поиск нужной idGroup записи по заданному idGroup в главной таблице:
@@ -29,6 +30,5 @@ public interface MainGroupRepository extends JpaRepository<MainGroup, Long> {
 
    @Query("SELECT mg FROM MainGroup mg WHERE mg.idConversion.idConversion = 11690 ORDER BY mg.dateCreate DESC")
    public List<MainGroup> findAllByIdConversionOrderByDateCreateDateCreateDesc();
-
 
 }
