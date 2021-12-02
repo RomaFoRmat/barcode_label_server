@@ -13,12 +13,12 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "LABORATORY", schema = "LABCZL")
+@Table(name = "LABORATORY", schema = "HR")
 public class Laboratory {
 
     @Id
     @Column(name = "ID_LABORATORY")
-    private Integer idLaboratory;
+    private Long idLaboratory;
 
     @Column(name = "LABORATORY_NAME")
     private String nameLaboratory;

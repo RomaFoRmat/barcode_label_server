@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "FOREIN_GROUP", schema = "LABCZL")
+@Table(name = "FOREIN_GROUP", schema = "HR")
 public class ForeignGroup {
 
     @Id

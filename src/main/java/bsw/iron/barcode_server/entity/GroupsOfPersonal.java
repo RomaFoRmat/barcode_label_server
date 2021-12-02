@@ -13,12 +13,12 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "GROUPS_OF_PERSONALS", schema = "LABCZL")
+@Table(name = "GROUPS_OF_PERSONALS", schema = "HR")
 public class GroupsOfPersonal {
 
     @Id
     @Column(name = "ID_GROUP")
-    private Integer idGroup;
+    private Long idGroup;
 
     @Column(name = "NAME_GROUP")
     private String nameGroup;

@@ -57,7 +57,7 @@ public class MainGroupServiceImpl implements MainGroupService {
         dateTable.setDateCreate(LocalDateTime.now());
         dateTable.setIpAddressCreate(mainGroupRequestDTO.getIpAddressCreate());
         dateTable.setLaboratory(mainGroupRequestDTO.getLaboratory());
-        dateTableRepository.saveAndFlush(dateTable);
+        DateTable createdDateTable = dateTableRepository.saveAndFlush(dateTable);
 
         for (MainValueDTO mainValueDTO : mainGroupRequestDTO.getMainValueDTOList()) {
             MainValue mainValue = new MainValue();
@@ -73,7 +73,7 @@ public class MainGroupServiceImpl implements MainGroupService {
         
         MainGroupResponseDTO mainGroupResponseDTO = new MainGroupResponseDTO();
         mainGroupResponseDTO.setMainGroup(createdMainGroup);
-        mainGroupResponseDTO.setDateTable(dateTable);
+        mainGroupResponseDTO.setDateTable(createdDateTable);
 
         return mainGroupResponseDTO;
     }
