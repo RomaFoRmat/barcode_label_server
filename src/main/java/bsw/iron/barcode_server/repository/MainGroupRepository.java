@@ -21,7 +21,6 @@ public interface MainGroupRepository extends JpaRepository<MainGroup, Long> {
      */
 
     public MainGroup saveAndFlush(MainGroup mainGroup);
-//    public MainGroupResponseDTO saveAndFlush(MainGroupRequestDTO mainGroupRequestDTO);
 
    /**
     * Поиск нужной idGroup записи по заданному idGroup в главной таблице:

@@ -1,17 +1,14 @@
 package bsw.iron.barcode_server.service;
 
-import bsw.iron.barcode_server.entity.Conversion;
-import bsw.iron.barcode_server.entity.ForeignGroup;
-import bsw.iron.barcode_server.entity.MainGroup;
-import bsw.iron.barcode_server.entity.TestValue;
+import bsw.iron.barcode_server.entity.*;
+import bsw.iron.barcode_server.entity.dto.ForeignGroupRequestDTO;
+import bsw.iron.barcode_server.entity.dto.ForeignGroupResponseDTO;
 import bsw.iron.barcode_server.entity.dto.TestValueDTO;
-import bsw.iron.barcode_server.repository.ConversionRepository;
-import bsw.iron.barcode_server.repository.ForeignGroupRepository;
-import bsw.iron.barcode_server.repository.MainGroupRepository;
-import bsw.iron.barcode_server.repository.TestValueRepository;
+import bsw.iron.barcode_server.repository.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -22,12 +19,14 @@ public class ForeignGroupServiceImpl implements ForeignGroupService {
     private final TestValueRepository testValueRepository;
     private final ConversionRepository conversionRepository;
     private final MainGroupRepository mainGroupRepository;
+    private final DateTableRepository dateTableRepository;
 
-    public ForeignGroupServiceImpl(ForeignGroupRepository foreignGroupRepository, TestValueRepository testValueRepository, ConversionRepository conversionRepository, MainGroupRepository mainGroupRepository) {
+    public ForeignGroupServiceImpl(ForeignGroupRepository foreignGroupRepository, TestValueRepository testValueRepository, ConversionRepository conversionRepository, MainGroupRepository mainGroupRepository, DateTableRepository dateTableRepository) {
         this.foreignGroupRepository = foreignGroupRepository;
         this.testValueRepository = testValueRepository;
         this.conversionRepository = conversionRepository;
         this.mainGroupRepository = mainGroupRepository;
+        this.dateTableRepository = dateTableRepository;
     }
 
 
@@ -38,29 +37,29 @@ public class ForeignGroupServiceImpl implements ForeignGroupService {
 
     @Override
     @Transactional
-    public ForeignGroup addIdForeign(List<TestValueDTO> testValueDTOs) {
+    public ForeignGroupResponseDTO addIdForeign(ForeignGroupRequestDTO foreignGroupRequestDTO) {
         Conversion conversion = conversionRepository.findById(11690L)
                 .orElseThrow(() -> new IllegalArgumentException("Conversion was not found"));
-//        для проверки создания:
-//        MainGroup mainGroup = mainGroupRepository.findById(1977541L)
-//                .orElseThrow(()-> new IllegalArgumentException("IdGroup was not found"));
 
         ForeignGroup foreignGroup = new ForeignGroup();
-        MainGroup mainGroup = mainGroupRepository.findById(testValueDTOs.get(0).getMainGroup().getIdGroup())
+        MainGroup mainGroup = mainGroupRepository.findById(foreignGroupRequestDTO.getTestValueDTOList().get(0).getMainGroup().getIdGroup())
                 .orElseThrow(() -> new IllegalArgumentException("IdGroup was not found"));
         foreignGroup.setMainGroup(mainGroup);
         ForeignGroup createdForeignGroup = foreignGroupRepository.saveAndFlush(foreignGroup);
 
-//        TestValue testValue = new TestValue();
-//        TestValue.TestValuePrimaryKey testValuePrimaryKey = new TestValue.TestValuePrimaryKey();
-////        testValuePrimaryKey.setIdTestHead(11697L);
-//        testValuePrimaryKey.setIdForeign(foreignGroup.getIdForeignGroup());
-//        testValue.setTestValuePrimaryKey(testValuePrimaryKey);
-////        testValue.setTextValue("Test");
-//        testValue.setIdConversion(conversion.getIdConversion());
-//        testValueRepository.saveAndFlush(testValue);
+        DateTable dateTableForeign = new DateTable();
+        DateTable.DateTableForeignKey dateTableForeignKey = new DateTable.DateTableForeignKey();
+        dateTableForeignKey.setForeignGroup(createdForeignGroup);
+        dateTableForeignKey.setMainGroup(mainGroup);
+        dateTableForeign.setDateTableForeignKey(dateTableForeignKey);
+        dateTableForeign.setWhoCreate(foreignGroupRequestDTO.getWhoCreate());
+        dateTableForeign.setDateCreate(LocalDateTime.now());
+        dateTableForeign.setIpAddressCreate(foreignGroupRequestDTO.getIpAddressCreate());
+        dateTableForeign.setLaboratory(foreignGroupRequestDTO.getLaboratory());
+        DateTable createdDateTableForeign = dateTableRepository.saveAndFlush(dateTableForeign);
 
-        for (TestValueDTO testValueDTO : testValueDTOs){
+
+        for (TestValueDTO testValueDTO : foreignGroupRequestDTO.getTestValueDTOList()) {
             TestValue testValue = new TestValue();
             TestValue.TestValuePrimaryKey testValuePrimaryKey = new TestValue.TestValuePrimaryKey();
             testValuePrimaryKey.setIdTestHead(testValueDTO.getIdTestHead());
@@ -70,11 +69,15 @@ public class ForeignGroupServiceImpl implements ForeignGroupService {
             testValue.setTextValue(testValueDTO.getTextValue());
             testValue.setValue(testValueDTO.getValue());
             testValue.setDateValue(testValueDTO.getDateValue());
+
             testValueRepository.saveAndFlush(testValue);
         }
 
+        ForeignGroupResponseDTO foreignGroupResponseDTO = new ForeignGroupResponseDTO();
+        foreignGroupResponseDTO.setForeignGroup(createdForeignGroup);
+        foreignGroupResponseDTO.setDateTable(createdDateTableForeign);
 
-        return createdForeignGroup;
+        return foreignGroupResponseDTO;
     }
 
     @Override

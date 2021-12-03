@@ -10,11 +10,4 @@ public class MainValueDTO {
     private String value;
     private Double numberValue;
     private Code code;
-//поля для DateTable:
-//    private DateTable.DateTableForeignKey dateTableForeignKey;
-//    private LocalDateTime dateCreate;
-//    private String whoCreate;
-//    private Long laboratory;
-//    private String ipAddressCreate;
-
 }

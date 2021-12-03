@@ -38,6 +38,8 @@ public class AccessPersonal {
     @Data
     @NoArgsConstructor
     public static class AccessPersonalPrimaryKey implements Serializable {
+        @Column(name = "ID_LABORATORY")
+        private Long idLaboratory;
 
         @Column(name = "ID_PEREDEL")
         private Long idConversion;
