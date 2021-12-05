@@ -2,11 +2,14 @@ package bsw.iron.barcode_server.controller;
 
 import bsw.iron.barcode_server.entity.TestLabel;
 import bsw.iron.barcode_server.service.TestLabelService;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -33,6 +36,11 @@ public class TestLabelController {
     @GetMapping("/allSpool/forTheLastDay")
     public List<TestLabel> getAllSpoolsForTheLastDay(){
         return testLabelService.findAllByDateCreate();
+    }
+
+    @GetMapping("/allSpool/{dateCreate}")
+    public List<TestLabel> findAllByDateCreateOrderByDateCreate(@PathVariable @DateTimeFormat(pattern = "MM-dd-yyyy HH:mm:ss") LocalDateTime dateCreate){
+        return testLabelService.findAllByDateCreateOrderByDateCreate(dateCreate);
     }
 
 }

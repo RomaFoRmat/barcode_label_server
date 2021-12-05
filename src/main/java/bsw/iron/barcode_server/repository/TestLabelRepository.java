@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
@@ -21,5 +23,7 @@ public interface TestLabelRepository extends JpaRepository<TestLabel, Long> {
     @Query(value = "SELECT * FROM TEST_BARCODE_LABEL  WHERE DATE_CREATE >= SYSDATE - 1  ORDER BY DATE_CREATE DESC", nativeQuery = true)
     public List<TestLabel> findAllByDateCreate();
 
+    @Query("SELECT tl FROM TestLabel  tl WHERE  tl.dateCreate = :dateCreate  ORDER BY tl.dateCreate DESC")
+    public List<TestLabel> findAllByDateCreateOrderByDateCreate(LocalDateTime dateCreate);
 
 }

@@ -58,7 +58,6 @@ public class ForeignGroupServiceImpl implements ForeignGroupService {
         dateTableForeign.setLaboratory(foreignGroupRequestDTO.getLaboratory());
         DateTable createdDateTableForeign = dateTableRepository.saveAndFlush(dateTableForeign);
 
-
         for (TestValueDTO testValueDTO : foreignGroupRequestDTO.getTestValueDTOList()) {
             TestValue testValue = new TestValue();
             TestValue.TestValuePrimaryKey testValuePrimaryKey = new TestValue.TestValuePrimaryKey();
@@ -72,7 +71,6 @@ public class ForeignGroupServiceImpl implements ForeignGroupService {
 
             testValueRepository.saveAndFlush(testValue);
         }
-
         ForeignGroupResponseDTO foreignGroupResponseDTO = new ForeignGroupResponseDTO();
         foreignGroupResponseDTO.setForeignGroup(createdForeignGroup);
         foreignGroupResponseDTO.setDateTable(createdDateTableForeign);
