@@ -15,6 +15,6 @@ public interface TestLabelService {
 
     public List<TestLabel> findAllByDateCreate();
 
-    public List<TestLabel> findAllByDateCreateOrderByDateCreate(LocalDateTime dateCreate);
+    public List<TestLabel> findAllByDateCreateOrderByDateCreate(LocalDateTime dateCreateStart, LocalDateTime dateCreateEnd);
 
 }

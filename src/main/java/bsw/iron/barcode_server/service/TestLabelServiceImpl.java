@@ -2,6 +2,7 @@ package bsw.iron.barcode_server.service;
 
 import bsw.iron.barcode_server.entity.TestLabel;
 import bsw.iron.barcode_server.repository.TestLabelRepository;
+import org.apache.tomcat.jni.Local;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -34,8 +35,8 @@ public class TestLabelServiceImpl implements TestLabelService{
     }
 
     @Override
-    public List<TestLabel> findAllByDateCreateOrderByDateCreate(LocalDateTime dateCreate) {
-        return testLabelRepository.findAllByDateCreateOrderByDateCreate(dateCreate);
+    public List<TestLabel> findAllByDateCreateOrderByDateCreate(LocalDateTime dateCreateStart, LocalDateTime dateCreateEnd) {
+        return testLabelRepository.findAllByDateCreateOrderByDateCreate(dateCreateStart,dateCreateEnd);
     }
 
 
