@@ -29,9 +29,5 @@ public class MainGroup {
     @Column(name = "DATE_CREATE")
     private LocalDateTime dateCreate;
 
-//    @OneToMany(cascade = CascadeType.ALL )
-//    @JoinColumn(name="ID_GROUP")
-//    private List<ForeignGroup> foreignGroupList;
-
 
 }

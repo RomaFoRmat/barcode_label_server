@@ -38,8 +38,8 @@ public class TestLabelController {
         return testLabelService.findAllByDateCreate();
     }
 
-    @GetMapping("/allSpool/{dateCreate}")
-    public List<TestLabel> findAllByDateCreateOrderByDateCreate(@PathVariable @DateTimeFormat(pattern = "MM-dd-yyyy HH:mm:ss") LocalDateTime dateCreate){
+    @GetMapping("/allSpool/{dateCreate}{dateCreate}")
+    public List<TestLabel> findAllByDateCreateOrderByDateCreate(@PathVariable LocalDateTime dateCreate){
         return testLabelService.findAllByDateCreateOrderByDateCreate(dateCreate);
     }
 
