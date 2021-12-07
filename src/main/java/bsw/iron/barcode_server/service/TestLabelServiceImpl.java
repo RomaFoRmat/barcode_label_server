@@ -35,8 +35,8 @@ public class TestLabelServiceImpl implements TestLabelService{
     }
 
     @Override
-    public List<TestLabel> findAllByDateCreateOrderByDateCreate(LocalDateTime dateCreateStart, LocalDateTime dateCreateEnd) {
-        return testLabelRepository.findAllByDateCreateOrderByDateCreate(dateCreateStart,dateCreateEnd);
+    public List<TestLabel> findAllByDateCreateBetween(LocalDateTime dateCreateStart, LocalDateTime dateCreateEnd) {
+        return testLabelRepository.findAllByDateCreateBetween(dateCreateStart,dateCreateEnd);
     }
 
 
