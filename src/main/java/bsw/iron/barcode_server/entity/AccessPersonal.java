@@ -11,7 +11,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "DOSTUP_PERSONAL", schema = "HR")
+@Table(name = "DOSTUP_PERSONAL", schema = "LABCZL")
 public class AccessPersonal {
 
     @EmbeddedId

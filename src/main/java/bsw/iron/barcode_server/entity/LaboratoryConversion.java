@@ -11,7 +11,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "LABORATORY_PEREDEL", schema = "HR")
+@Table(name = "LABORATORY_PEREDEL", schema = "LABCZL")
 public class LaboratoryConversion {
 
     @EmbeddedId

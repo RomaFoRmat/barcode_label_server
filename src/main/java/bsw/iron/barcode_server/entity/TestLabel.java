@@ -1,6 +1,5 @@
 package bsw.iron.barcode_server.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "TEST_BARCODE_LABEL", schema = "HR")
+@Table(name = "TEST_BARCODE_LABEL", schema = "LABCZL")
 public class TestLabel {
 
     @Id
@@ -30,7 +29,7 @@ public class TestLabel {
     @Column(name = "NUMBERSPOOL")
     private String numberSpool;
 
-//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    //    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
     @Column(name = "DATE_CREATE")
     private LocalDateTime dateCreate;
 
@@ -65,7 +64,7 @@ public class TestLabel {
     private Double numberWeldingMachine;
 
     @Column(name = "NKANMASH")
-    private Double numberRopeMachine;
+    private Integer numberRopeMachine;
 
     @Column(name = "LENGHTH")
     private Integer length;
