@@ -19,7 +19,7 @@ public interface TestLabelRepository extends JpaRepository<TestLabel, Long> {
     @Query("SELECT tl FROM TestLabel tl ORDER BY tl.dateCreate DESC")
     public List<TestLabel> findAll();
 
-    @Query(value = "SELECT * FROM TEST_BARCODE_LABEL  WHERE DATE_CREATE >= SYSDATE - 7  ORDER BY DATE_CREATE DESC", nativeQuery = true)
+    @Query(value = "SELECT * FROM TEST_BARCODE_LABEL  WHERE DATE_CREATE >= SYSDATE - 1  ORDER BY DATE_CREATE DESC", nativeQuery = true)
     public List<TestLabel> findAllByDateCreate();
 
     @Query("SELECT tl FROM TestLabel  tl WHERE  tl.dateCreate BETWEEN :dateCreateStart AND :dateCreateEnd  ORDER BY tl.dateCreate DESC")
