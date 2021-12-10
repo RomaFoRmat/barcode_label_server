@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface TestLabelRepository extends JpaRepository<TestLabel, Long> {
 
-
+    @Query("SELECT tl FROM TestLabel tl WHERE tl.numberSpool = :numberSpool ORDER BY tl.dateCreate DESC")
     public List<TestLabel> findByNumberSpool(String numberSpool);
 
 
