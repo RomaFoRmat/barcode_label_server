@@ -38,8 +38,8 @@ public class TestLabelController {
     }
 
     @GetMapping("/allSpool/{dateCreateStart}/{dateCreateEnd}")
-    public List<TestLabel> findAllByDateCreateBetween(@PathVariable @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm:ss") LocalDateTime dateCreateStart,
-                                                      @PathVariable @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm:ss") LocalDateTime dateCreateEnd) {
+    public List<TestLabel> findAllByDateCreateBetween(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateCreateStart,
+                                                      @PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateCreateEnd) {
         return testLabelService.findAllByDateCreateBetween(dateCreateStart, dateCreateEnd);
     }
 

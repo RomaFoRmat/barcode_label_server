@@ -1,5 +1,6 @@
 package bsw.iron.barcode_server.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,6 +32,7 @@ public class TestLabel {
 
     //    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
     @Column(name = "DATE_CREATE")
+    @JsonProperty("timestamp")
     private LocalDateTime dateCreate;
 
     @Column(name = "DATAMARK")
