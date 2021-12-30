@@ -8,7 +8,13 @@ import java.util.List;
 
 @Repository
 public interface PersonalsRepository extends JpaRepository<Personals, Long> {
+   /**
+    * Поиск пользователя по паролю:
+    */
    public List<Personals> findByPassword(String password);
 
+   /**
+    * Вывод всех пользователей:
+    */
    public List<Personals> findAll();
 }

@@ -14,32 +14,29 @@ public interface TestValueRepository extends JpaRepository<TestValue, Long> {
 
     //Здесь хранятся сами значения для подчиненной таблицы
 
- /**
-  * Поиск значения (value либо textValue в зависимости от типа данных) в таблице TestValue по переделу = 11690(металлокорд) и idTestHead(id того или иного параметра)
-  * idConversion = 11690 (const) ;
-  * idTestHead - используются все id value для данного передела.
-  */
-
+    /**
+     * Поиск значения (value/textValue в зависимости от типа данных) в таблице TestValue по переделу = 11690(металлокорд)
+     * idConversion = 11690 (const); idTestHead - id названия параметра для данного передела.
+     */
     @Query("SELECT tv FROM TestValue tv WHERE tv.idConversion = 11690 and tv.testValuePrimaryKey = :idTestHead")
     public List<TestValue> findByIdConversionAndIdTestHead(Long idTestHead);
 
- /**
-  * Получение всех значений подчиненной таблицы для передела 11690 постранично
-  * (долго выполняется запрос и не корректно) почему то выдает выдает одинаковые записи.
-  * Обычный вывод значений работает быстрее (но тоже долго)
-  */
-
+    /**
+     * Получение всех значений подчиненной таблицы для передела 11690 постранично(long request time):
+     */
     @Query("SELECT tv FROM TestValue tv WHERE tv.idConversion=11690")
     public Page<TestValue> findAllByIdConversion(Pageable pageable);
 
- /**
-  *  Получение всех значений подчиненной таблицы для передела 11690, отображается нормально, но соответственно долго
-  */
+    /**
+     * Получение всех значений подчиненной таблицы для передела 11690(long request time,т.к. большой объем данных)
+     */
     @Query("SELECT tv FROM TestValue tv WHERE tv.idConversion=11690")
     public List<TestValue> findAllByIdConversion();
 
+    /**
+     * Создать запись testValue:
+     */
     public TestValue saveAndFlush(TestValue testValue);
-
 
 
 }

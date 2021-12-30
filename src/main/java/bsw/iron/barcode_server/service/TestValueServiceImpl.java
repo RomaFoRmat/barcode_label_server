@@ -26,7 +26,6 @@ public class TestValueServiceImpl implements TestValueService {
         return testValueRepository.findByIdConversionAndIdTestHead(idTestHead);
     }
 
-
     @Override
     public Page<TestValue> findAllByIdConversion(Pageable pageable) {
         return testValueRepository.findAllByIdConversion(pageable);
