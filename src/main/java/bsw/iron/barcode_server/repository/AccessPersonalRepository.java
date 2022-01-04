@@ -10,7 +10,10 @@ import java.util.List;
 @Repository
 public interface AccessPersonalRepository extends JpaRepository<AccessPersonal, AccessPersonal.AccessPersonalPrimaryKey> {
 
-    @Query("SELECT ap FROM AccessPersonal ap WHERE ap.accessPersonalPrimaryKey.idConversion = 11690 AND ap.accessPersonalPrimaryKey.personals.idPersonal = :idPersonal")
-//    @Query(value ="SELECT * FROM DOSTUP_PERSONAL WHERE ID_PEREDEL=11690 AND ID_PERSONAL = :ID_PERSONAL",nativeQuery = true )
+    /**
+     * Поиск информации о пользователе для передела=11690 по idPersonal в таблице DOSTUP_PERSONAL:
+     */
+    @Query("SELECT ap FROM AccessPersonal ap WHERE ap.accessPersonalPrimaryKey.idConversion = 11690 AND" +
+            " ap.accessPersonalPrimaryKey.personals.idPersonal = :idPersonal")
     public List<AccessPersonal> findAllByAccessPersonalPrimaryKeyPersonalsIdPersonal(Long idPersonal);
 }

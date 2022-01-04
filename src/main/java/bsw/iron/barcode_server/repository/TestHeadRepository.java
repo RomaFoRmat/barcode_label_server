@@ -10,8 +10,7 @@ import java.util.List;
 @Repository
 public interface TestHeadRepository extends JpaRepository<TestHead, Long> {
 
-// Здесь хранятся captionName и их idTestHead для TestValue
-
+    // Здесь хранятся captionName и их idTestHead для
     /**
      * Получение всех наименований (caption) значений для передела 11690 в подчиненной таблице
      */

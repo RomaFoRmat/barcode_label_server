@@ -12,7 +12,6 @@ public class PersonalsServiceImpl implements PersonalsService {
 
     private final PersonalsRepository personalsRepository;
 
-
     public PersonalsServiceImpl(PersonalsRepository personalsRepository) {
         this.personalsRepository = personalsRepository;
     }

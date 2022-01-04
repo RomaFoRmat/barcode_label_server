@@ -29,7 +29,6 @@ public class ForeignGroupServiceImpl implements ForeignGroupService {
         this.dateTableRepository = dateTableRepository;
     }
 
-
     @Override
     public List<ForeignGroup> findByMainGroupIdConversionAndIdForeignGroup(Long idForeignGroup) {
         return foreignGroupRepository.findByMainGroupIdConversionAndIdForeignGroup(idForeignGroup);

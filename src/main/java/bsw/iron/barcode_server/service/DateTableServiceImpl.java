@@ -13,7 +13,6 @@ public class DateTableServiceImpl implements DateTableService {
         this.dateTableRepository = dateTableRepository;
     }
 
-
     @Override
     public DateTable saveAndFlush(DateTable dateTable) {
         return dateTableRepository.saveAndFlush(dateTable);
