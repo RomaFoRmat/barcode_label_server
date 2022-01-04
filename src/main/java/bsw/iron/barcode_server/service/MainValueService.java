@@ -10,7 +10,7 @@ public interface MainValueService {
 
     public List<MainValue> findByMainValuePrimaryKeyIdHead(Long idHead);
 
-    public List<String> findFirstByMainValuePrimaryKeyIdHeadOrderByNumberValueDesc();
+    public List<String> findFirstByMainValuePrimaryKeyIdHead();
 
     public List<MainValue> findAll();
 

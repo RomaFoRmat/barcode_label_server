@@ -26,8 +26,8 @@ public class MainValueController {
     }
 
     @GetMapping("/lastProtocol")
-    public List<String> findFirstByMainValuePrimaryKeyIdHeadOrderByNumberValueDesc() {
-        return mainValueService.findFirstByMainValuePrimaryKeyIdHeadOrderByNumberValueDesc();
+    public List<String> findFirstByMainValuePrimaryKeyIdHead() {
+        return mainValueService.findFirstByMainValuePrimaryKeyIdHead();
     }
 
     @GetMapping("/allMainValues")
