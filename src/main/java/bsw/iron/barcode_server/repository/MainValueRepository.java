@@ -12,12 +12,11 @@ import java.util.List;
 @Repository
 public interface MainValueRepository extends JpaRepository<MainValue, Long> {
 
-
     /**
-     * Поиск значения (value либо textValue в зависимости от типа данных) в таблице MainValue по переделу = 11690(металлокорд) и idtHead(id того или иного параметра)
+     * Поиск значения (value/textValue в зависимости от типа данных) в таблице MainValue по переделу = 11690(МК) и
+     * idHead(id того или иного названия параметра)
      * idConversion = 11690 (const) ; idHead - используются все id value для данного передела
      */
-
     @Query("SELECT mv FROM MainValue mv WHERE mv.mainValuePrimaryKey.idHead = :idHead")
     public List<MainValue> findByMainValuePrimaryKeyIdHead(Long idHead);
 
@@ -33,18 +32,18 @@ public interface MainValueRepository extends JpaRepository<MainValue, Long> {
 
 
     /**
-     * получение всех значений главной таблицы постранично
+     * получение всех значений главной таблицы постранично:
      */
-
     public Page<MainValue> findAll(Pageable pageable);
 
 
     /**
-     * Получение всех значений главной таблицы для передела 11690.
-     * Проблемы с выводом.
+     * Получение всех значений главной таблицы для передела 11690 (проблемы с выводом,т.к. большой объем данных):
      */
-
     public List<MainValue> findAll();
 
+    /**
+     * Создать запись mainValue:
+     */
     public MainValue saveAndFlush(MainValue mainValue);
 }
