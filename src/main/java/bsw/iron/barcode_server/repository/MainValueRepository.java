@@ -26,8 +26,9 @@ public interface MainValueRepository extends JpaRepository<MainValue, Long> {
      */
     @Query(value =
             "SELECT * FROM (SELECT NUMBER_VALUE from MAIN_VOLUE mv JOIN MAIN_GROUP mg on mv.id_group = mg.id_group " +
-            "WHERE mv.id_head = 1889350 AND mg.id_peredel=11690 AND TO_CHAR(TRUNC(mg.date_create,'YYYY'),'YYYY') = " +
-                    "TO_CHAR(TRUNC(sysdate,'YYYY'),'YYYY') ORDER BY mg.date_create DESC ) WHERE rownum=1",
+                    "WHERE mv.id_head = 1889350 AND mg.id_peredel=11690 " +
+                    "AND TO_CHAR(TRUNC(mg.date_create,'YYYY'),'YYYY') = TO_CHAR(TRUNC(sysdate,'YYYY'),'YYYY') " +
+                    "ORDER BY mg.date_create DESC ) WHERE rownum=1",
             nativeQuery = true)
     public List<String> findFirstByMainValuePrimaryKeyIdHead();
 
