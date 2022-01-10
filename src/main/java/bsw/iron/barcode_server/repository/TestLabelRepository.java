@@ -25,8 +25,13 @@ public interface TestLabelRepository extends JpaRepository<TestLabel, Long> {
     public List<TestLabel> findAllByDateCreate();
 
     //вывод катушек за определенный интервал времени:
-    @Query("SELECT tl FROM TestLabel  tl WHERE  tl.dateCreate BETWEEN :dateCreateStart AND :dateCreateEnd  ORDER BY tl.dateCreate ASC")
+    @Query("SELECT tl FROM TestLabel  tl WHERE  tl.dateCreate BETWEEN :dateCreateStart AND :dateCreateEnd  ORDER BY tl.dateCreate DESC")
     public List<TestLabel> findAllByDateCreateBetween(LocalDateTime dateCreateStart, LocalDateTime dateCreateEnd);
+
+    //вывод последних n записей:
+    @Query(value= "SELECT * FROM (SELECT * FROM TEST_BARCODE_LABEL tbl ORDER BY tbl.DATE_CREATE DESC) " +
+            "WHERE ROWNUM <= :rowNum ORDER BY ROWNUM DESC",nativeQuery = true)
+    public List<TestLabel> findFirstValuesByRowNum(String rowNum);
 
 }
 

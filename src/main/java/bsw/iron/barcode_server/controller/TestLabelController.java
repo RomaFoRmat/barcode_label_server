@@ -43,4 +43,9 @@ public class TestLabelController {
         return testLabelService.findAllByDateCreateBetween(dateCreateStart, dateCreateEnd);
     }
 
+    @GetMapping("/allSpool/{rowNum}")
+    public List<TestLabel> findFirstValuesByRowNum(@PathVariable String rowNum){
+        return testLabelService.findFirstValuesByRowNum(rowNum);
+    }
+
 }

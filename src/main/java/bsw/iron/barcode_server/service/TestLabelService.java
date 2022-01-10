@@ -12,5 +12,6 @@ public interface TestLabelService {
     public List<TestLabel> findAll();
     public List<TestLabel> findAllByDateCreate();
     public List<TestLabel> findAllByDateCreateBetween(LocalDateTime dateCreateStart, LocalDateTime dateCreateEnd);
+    public List<TestLabel> findFirstValuesByRowNum(String rowNum);
 
 }

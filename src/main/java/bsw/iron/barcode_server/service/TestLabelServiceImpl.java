@@ -35,4 +35,9 @@ public class TestLabelServiceImpl implements TestLabelService{
     public List<TestLabel> findAllByDateCreateBetween(LocalDateTime dateCreateStart, LocalDateTime dateCreateEnd) {
         return testLabelRepository.findAllByDateCreateBetween(dateCreateStart,dateCreateEnd);
     }
+
+    @Override
+    public List<TestLabel> findFirstValuesByRowNum(String rowNum) {
+        return testLabelRepository.findFirstValuesByRowNum(rowNum);
+    }
 }
