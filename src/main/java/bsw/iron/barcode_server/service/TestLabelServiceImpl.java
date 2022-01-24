@@ -40,4 +40,5 @@ public class TestLabelServiceImpl implements TestLabelService{
     public List<TestLabel> findFirstValuesByRowNum(String rowNum) {
         return testLabelRepository.findFirstValuesByRowNum(rowNum);
     }
+
 }

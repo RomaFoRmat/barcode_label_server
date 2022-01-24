@@ -16,11 +16,9 @@ import java.util.List;
 public class TestLabelController {
 
     private final TestLabelService testLabelService;
-
     public TestLabelController(TestLabelService testLabelService) {
         this.testLabelService = testLabelService;
     }
-
 
     @GetMapping("/label/spool/{numberSpool}")
     public List<TestLabel> showDataNumbSpool(@PathVariable String numberSpool) {
@@ -47,5 +45,4 @@ public class TestLabelController {
     public List<TestLabel> findFirstValuesByRowNum(@PathVariable String rowNum){
         return testLabelService.findFirstValuesByRowNum(rowNum);
     }
-
 }
