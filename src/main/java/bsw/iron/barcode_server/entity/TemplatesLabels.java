@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
@@ -18,6 +15,8 @@ public class TemplatesLabels {
 
     @Id
     @Column(name = "ID_TEMPLATE")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TEMPLATES_SEQ")
+    @SequenceGenerator(name = "TEMPLATES_SEQ", sequenceName = "TEMPLATES_SEQ", allocationSize = 1)
     private Long idTemplate;
 
 //    @OneToOne
@@ -25,7 +24,7 @@ public class TemplatesLabels {
 //    private Code.CodePrimaryKey code;
 
     @Column(name = "RUS_ENG")
-    private Boolean languagelabel;
+    private Boolean languageLabel;
     @Column(name = "CONSTRUCT")
     private Boolean construct;
     @Column(name = "CODE")
