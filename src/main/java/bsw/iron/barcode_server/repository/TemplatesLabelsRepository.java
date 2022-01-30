@@ -18,5 +18,6 @@ public interface TemplatesLabelsRepository extends JpaRepository<TemplatesLabels
     public TemplatesLabels saveAndFlush(TemplatesLabels templatesLabels);
 
     //вывод всех шаблонов
-    public List<TemplatesLabels> findAll();
+    @Query("SELECT tl FROM TemplatesLabels tl ORDER BY tl.idCode")
+    public List<TemplatesLabels> findAllOrderByIdCode();
 }
