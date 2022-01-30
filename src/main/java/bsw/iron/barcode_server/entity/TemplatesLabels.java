@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "TEMPLATES_LABELS", schema = "LABCZL")
+@Table(name = "TEMPLATES_LABELS", schema = "HR")
 public class TemplatesLabels {
 
     @Id
@@ -19,10 +19,8 @@ public class TemplatesLabels {
     @SequenceGenerator(name = "TEMPLATES_SEQ", sequenceName = "TEMPLATES_SEQ", allocationSize = 1)
     private Long idTemplate;
 
-//    @OneToOne
-//    @JoinColumn(name = "ID_CODE")
-//    private Code.CodePrimaryKey code;
-
+    @Column(name = "ID_KOD")
+    private Long idCode;
     @Column(name = "RUS_ENG")
     private Boolean languageLabel;
     @Column(name = "CONSTRUCT")

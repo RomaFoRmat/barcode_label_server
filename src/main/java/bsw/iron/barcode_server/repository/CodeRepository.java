@@ -1,6 +1,7 @@
 package bsw.iron.barcode_server.repository;
 
 import bsw.iron.barcode_server.entity.Code;
+import bsw.iron.barcode_server.entity.TestLabel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -17,5 +18,8 @@ public interface CodeRepository extends JpaRepository<Code, Long> {
   */
  @Query("SELECT c FROM Code c WHERE c.codePrimaryKey.conversion.idConversion = 11690 AND c.visible = true ORDER BY c.code ")
  public List<Code> findAllByConversionIdConversion();
+
+ @Query("SELECT c FROM Code c WHERE c.code = :code")
+ public List<Code> findByCode(String code);
 
 }

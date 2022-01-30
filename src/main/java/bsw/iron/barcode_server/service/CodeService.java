@@ -7,4 +7,5 @@ import java.util.List;
 public interface CodeService {
 
     public List<Code> findAllByConversionIdConversion();
+    public List<Code> findByCode(String code);
 }

@@ -19,4 +19,9 @@ public class CodeServiceImpl implements CodeService {
     public List<Code> findAllByConversionIdConversion() {
         return codeRepository.findAllByConversionIdConversion();
     }
+
+    @Override
+    public List<Code> findByCode(String code) {
+        return codeRepository.findByCode(code);
+    }
 }
