@@ -6,7 +6,6 @@ import bsw.iron.barcode_server.entity.dto.TemplateLabelDTO;
 import bsw.iron.barcode_server.repository.CodeRepository;
 import bsw.iron.barcode_server.repository.TemplatesLabelsRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,8 +39,8 @@ public class TemplatesLabelsServiceImpl implements TemplatesLabelsService {
         for(TemplatesLabels templatesLabels: templatesLabelsList){
             TemplateLabelDTO templateLabelDTO = new TemplateLabelDTO();
             templateLabelDTO.setTemplatesLabels(templatesLabels);
-            Code code = codeRepository.findByIdCode(templatesLabels.getIdCode());
-            templateLabelDTO.setCode(code.getCode());
+            Code code = codeRepository.findByIdKod(templatesLabels.getIdCode());
+            templateLabelDTO.setKod(code.getCode());
             templateLabelDTOS.add(templateLabelDTO);
         }
         return templateLabelDTOS;

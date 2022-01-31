@@ -30,8 +30,8 @@ public class CodeController {
     }
 
     @GetMapping("/codeDTO/{code}")
-    public Code findByIdCode(@PathVariable Long code){
-        return codeService.findByIdCode(code);
+    public Code findByIdKod(@PathVariable Long code){
+        return codeService.findByIdKod(code);
     }
-    
+
 }

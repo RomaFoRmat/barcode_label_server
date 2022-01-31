@@ -26,7 +26,7 @@ public class CodeServiceImpl implements CodeService {
     }
 
     @Override
-    public Code findByIdCode(Long code) {
-        return codeRepository.findByIdCode(code);
+    public Code findByIdKod(Long code) {
+        return codeRepository.findByIdKod(code);
     }
 }

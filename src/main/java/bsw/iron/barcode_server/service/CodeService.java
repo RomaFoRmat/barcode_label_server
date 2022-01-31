@@ -8,5 +8,5 @@ public interface CodeService {
 
     public List<Code> findAllByConversionIdConversion();
     public List<Code> findByCode(String code);
-    public Code findByIdCode(Long code);
+    public Code findByIdKod(Long code);
 }

@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class TemplateLabelDTO {
     private TemplatesLabels templatesLabels;
-    private String code;
+    private String kod;
 
 }
+
