@@ -24,4 +24,9 @@ public class CodeServiceImpl implements CodeService {
     public List<Code> findByCode(String code) {
         return codeRepository.findByCode(code);
     }
+
+    @Override
+    public Code findByIdCode(Long code) {
+        return codeRepository.findByIdCode(code);
+    }
 }

@@ -8,6 +8,7 @@ import bsw.iron.barcode_server.repository.TemplatesLabelsRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -26,20 +27,6 @@ public class TemplatesLabelsServiceImpl implements TemplatesLabelsService {
         return templatesLabelsRepository.findByIdCode(idCode);
     }
 
-//    @Override
-//    @Transactional
-//    public TemplatesLabels addTemplate(TemplateLabelDTO templatesLabelDTO) {
-//        TemplatesLabels templatesLabels = new TemplatesLabels();
-//        Long id = templatesLabels.getIdCode();
-//
-//
-//        Code code = new Code();
-//        Code.CodePrimaryKey codePrimaryKey = new Code.CodePrimaryKey();
-//        codePrimaryKey.setIdCode(id);
-//        code.setCode();
-//
-//        return null;
-//    }
 
     @Override
     public TemplatesLabels saveAndFlush(TemplatesLabels templatesLabels) {
@@ -47,7 +34,16 @@ public class TemplatesLabelsServiceImpl implements TemplatesLabelsService {
     }
 
     @Override
-    public List<TemplatesLabels> findAllOrderByIdCode() {
-        return templatesLabelsRepository.findAllOrderByIdCode();
+    public List<TemplateLabelDTO> findAllOrderByIdCode() {
+        List<TemplatesLabels> templatesLabelsList = templatesLabelsRepository.findAllOrderByIdCode();
+        List<TemplateLabelDTO> templateLabelDTOS = new ArrayList<>();
+        for(TemplatesLabels templatesLabels: templatesLabelsList){
+            TemplateLabelDTO templateLabelDTO = new TemplateLabelDTO();
+            templateLabelDTO.setTemplatesLabels(templatesLabels);
+            Code code = codeRepository.findByIdCode(templatesLabels.getIdCode());
+            templateLabelDTO.setCode(code.getCode());
+            templateLabelDTOS.add(templateLabelDTO);
+        }
+        return templateLabelDTOS;
     }
 }

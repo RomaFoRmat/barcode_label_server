@@ -22,4 +22,7 @@ public interface CodeRepository extends JpaRepository<Code, Long> {
  @Query("SELECT c FROM Code c WHERE c.code = :code")
  public List<Code> findByCode(String code);
 
+ @Query("SELECT c FROM  Code c WHERE c.codePrimaryKey.conversion.idConversion=11690 AND c.codePrimaryKey.idCode = :code")
+ public Code findByIdCode(Long code);
+
 }

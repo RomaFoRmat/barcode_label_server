@@ -12,7 +12,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "CODE", schema = "HR")
+@Table(name = "CODE", schema = "LABCZL")
 public class Code {
 
     @EmbeddedId
@@ -40,6 +40,5 @@ public class Code {
         private Conversion conversion;
 
     }
-
 
 }

@@ -29,6 +29,9 @@ public class CodeController {
         return codeService.findByCode(code);
     }
 
-
-
+    @GetMapping("/codeDTO/{code}")
+    public Code findByIdCode(@PathVariable Long code){
+        return codeService.findByIdCode(code);
+    }
+    
 }

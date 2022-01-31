@@ -9,5 +9,5 @@ public interface TemplatesLabelsService {
     public List<TemplatesLabels> findByIdCode(Long idCode);
     public TemplatesLabels saveAndFlush(TemplatesLabels templatesLabels);
 //    public TemplatesLabels addTemplate(TemplateLabelDTO templatesLabelDTO);
-    public List<TemplatesLabels> findAllOrderByIdCode();
+    public List<TemplateLabelDTO> findAllOrderByIdCode();
 }
