@@ -10,4 +10,5 @@ public interface TemplatesLabelsService {
     public TemplatesLabels saveAndFlush(TemplatesLabels templatesLabels);
 //    public TemplatesLabels addTemplate(TemplateLabelDTO templatesLabelDTO);
     public List<TemplateLabelDTO> findAllOrderByIdCode();
+    public void deleteByIdTemplate(Long idTemplate);
 }

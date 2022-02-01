@@ -45,4 +45,9 @@ public class TemplatesLabelsServiceImpl implements TemplatesLabelsService {
         }
         return templateLabelDTOS;
     }
+
+    @Override
+    public void deleteByIdTemplate(Long idTemplate) {
+        templatesLabelsRepository.deleteByIdTemplate(idTemplate);
+    }
 }

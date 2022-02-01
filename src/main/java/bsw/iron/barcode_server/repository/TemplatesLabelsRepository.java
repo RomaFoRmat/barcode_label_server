@@ -20,4 +20,6 @@ public interface TemplatesLabelsRepository extends JpaRepository<TemplatesLabels
     //вывод всех шаблонов
     @Query("SELECT tl FROM TemplatesLabels tl ORDER BY tl.idCode")
     public List<TemplatesLabels> findAllOrderByIdCode();
+
+    public void deleteByIdTemplate(Long idTemplate);
 }

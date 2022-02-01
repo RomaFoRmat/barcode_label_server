@@ -45,5 +45,11 @@ public class TemplatesLabelController {
         });
         return templatesLabelsService.saveAndFlush(template);
     }
+
+    @DeleteMapping("/{idTemplate}")
+    @Transactional
+    public void deleteByIdTemplate(@PathVariable Long idTemplate) {
+        templatesLabelsService.deleteByIdTemplate(idTemplate);
+    }
 }
 
