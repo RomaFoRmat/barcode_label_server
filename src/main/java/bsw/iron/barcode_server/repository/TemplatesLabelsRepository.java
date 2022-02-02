@@ -22,4 +22,5 @@ public interface TemplatesLabelsRepository extends JpaRepository<TemplatesLabels
     public List<TemplatesLabels> findAllOrderByIdCode();
 
     public void deleteByIdTemplate(Long idTemplate);
+
 }
