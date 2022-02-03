@@ -6,6 +6,6 @@ import bsw.iron.barcode_server.entity.Laboratory;
 import java.util.List;
 
 public interface GroupsOfPersonalService {
-    public List<GroupsOfPersonal> findAllByIdGroup(Long idGroup);
+    List<GroupsOfPersonal> findAllByIdGroup(Long idGroup);
 }
 

@@ -19,24 +19,24 @@ public interface TestValueRepository extends JpaRepository<TestValue, Long> {
      * idConversion = 11690 (const); idTestHead - id названия параметра для данного передела.
      */
     @Query("SELECT tv FROM TestValue tv WHERE tv.idConversion = 11690 and tv.testValuePrimaryKey = :idTestHead")
-    public List<TestValue> findByIdConversionAndIdTestHead(Long idTestHead);
+    List<TestValue> findByIdConversionAndIdTestHead(Long idTestHead);
 
     /**
      * Получение всех значений подчиненной таблицы для передела 11690 постранично(long request time):
      */
     @Query("SELECT tv FROM TestValue tv WHERE tv.idConversion=11690")
-    public Page<TestValue> findAllByIdConversion(Pageable pageable);
+    Page<TestValue> findAllByIdConversion(Pageable pageable);
 
     /**
      * Получение всех значений подчиненной таблицы для передела 11690(long request time,т.к. большой объем данных)
      */
     @Query("SELECT tv FROM TestValue tv WHERE tv.idConversion=11690")
-    public List<TestValue> findAllByIdConversion();
+    List<TestValue> findAllByIdConversion();
 
     /**
      * Создать запись testValue:
      */
-    public TestValue saveAndFlush(TestValue testValue);
+    TestValue saveAndFlush(TestValue testValue);
 
 
 }

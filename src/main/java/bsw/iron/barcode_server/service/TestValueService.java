@@ -11,13 +11,9 @@ import java.util.List;
 
 public interface TestValueService {
 
-    public List<TestValue> findByIdConversionAndIdTestHead(Long idTestHead);
-
-    public Page<TestValue> findAllByIdConversion(Pageable pageable);
-
-
-    public List<TestValue> findAllByIdConversion();
-
-    public TestValue saveAndFlush(TestValue testValue);
+    List<TestValue> findByIdConversionAndIdTestHead(Long idTestHead);
+    Page<TestValue> findAllByIdConversion(Pageable pageable);
+    List<TestValue> findAllByIdConversion();
+    TestValue saveAndFlush(TestValue testValue);
 
 }

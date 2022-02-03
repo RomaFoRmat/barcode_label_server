@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface AccessPersonalService {
 
-    public List<AccessPersonal> findAllByAccessPersonalPrimaryKeyPersonalsIdPersonal(Long idPersonal);
+    List<AccessPersonal> findAllByAccessPersonalPrimaryKeyPersonalsIdPersonal(Long idPersonal);
 }

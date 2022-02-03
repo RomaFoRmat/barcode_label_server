@@ -18,7 +18,7 @@ public interface MainValueRepository extends JpaRepository<MainValue, Long> {
      * idConversion = 11690 (const) ; idHead - используются все id value для данного передела
      */
     @Query("SELECT mv FROM MainValue mv WHERE mv.mainValuePrimaryKey.idHead = :idHead")
-    public List<MainValue> findByMainValuePrimaryKeyIdHead(Long idHead);
+    List<MainValue> findByMainValuePrimaryKeyIdHead(Long idHead);
 
 
     /**
@@ -30,7 +30,7 @@ public interface MainValueRepository extends JpaRepository<MainValue, Long> {
                     "AND TO_CHAR(TRUNC(mg.date_create,'YYYY'),'YYYY') = TO_CHAR(TRUNC(sysdate,'YYYY'),'YYYY') " +
                     "ORDER BY mg.date_create DESC ) WHERE rownum=1",
             nativeQuery = true)
-    public List<String> findFirstByMainValuePrimaryKeyIdHead();
+    List<String> findFirstByMainValuePrimaryKeyIdHead();
 
 
     /**

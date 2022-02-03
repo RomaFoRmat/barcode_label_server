@@ -8,13 +8,9 @@ import java.util.List;
 
 public interface MainValueService {
 
-    public List<MainValue> findByMainValuePrimaryKeyIdHead(Long idHead);
-
-    public List<String> findFirstByMainValuePrimaryKeyIdHead();
-
-    public List<MainValue> findAll();
-
-    public Page<MainValue> findAll(Pageable pageable);
-
-    public MainValue saveAndFlush(MainValue mainValue);
+    List<MainValue> findByMainValuePrimaryKeyIdHead(Long idHead);
+    List<String> findFirstByMainValuePrimaryKeyIdHead();
+    List<MainValue> findAll();
+    Page<MainValue> findAll(Pageable pageable);
+    MainValue saveAndFlush(MainValue mainValue);
 }

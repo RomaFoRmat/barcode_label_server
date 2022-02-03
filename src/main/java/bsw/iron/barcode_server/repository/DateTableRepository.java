@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface DateTableRepository extends JpaRepository<DateTable, DateTable.DateTableForeignKey> {
     //Создать запись DATE_TABLE
-    public DateTable saveAndFlush(DateTable dateTable);
+    DateTable saveAndFlush(DateTable dateTable);
 
 }

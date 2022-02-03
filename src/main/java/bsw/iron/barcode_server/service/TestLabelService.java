@@ -8,10 +8,10 @@ import java.util.List;
 
 public interface TestLabelService {
 
-    public List<TestLabel> findByNumberSpool(String numberSpool);
-    public List<TestLabel> findAll();
-    public List<TestLabel> findAllByDateCreate();
-    public List<TestLabel> findAllByDateCreateBetween(LocalDateTime dateCreateStart, LocalDateTime dateCreateEnd);
-    public List<TestLabel> findFirstValuesByRowNum(String rowNum);
+    List<TestLabel> findByNumberSpool(String numberSpool);
+    List<TestLabel> findAll();
+    List<TestLabel> findAllByDateCreate();
+    List<TestLabel> findAllByDateCreateBetween(LocalDateTime dateCreateStart, LocalDateTime dateCreateEnd);
+    List<TestLabel> findFirstValuesByRowNum(String rowNum);
 
 }

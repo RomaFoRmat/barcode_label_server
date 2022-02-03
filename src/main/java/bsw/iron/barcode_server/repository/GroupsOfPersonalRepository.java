@@ -14,5 +14,5 @@ public interface GroupsOfPersonalRepository extends JpaRepository<GroupsOfPerson
      * Получение информации о групе персонала по idGroup
      */
     @Query("SELECT gop FROM GroupsOfPersonal gop WHERE gop.idGroup = :idGroup")
-    public List<GroupsOfPersonal> findAllByIdGroup(Long idGroup);
+    List<GroupsOfPersonal> findAllByIdGroup(Long idGroup);
 }

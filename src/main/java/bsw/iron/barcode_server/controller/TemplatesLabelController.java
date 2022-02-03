@@ -1,8 +1,7 @@
 package bsw.iron.barcode_server.controller;
 
 import bsw.iron.barcode_server.entity.TemplatesLabels;
-import bsw.iron.barcode_server.entity.dto.ForeignGroupRequestDTO;
-import bsw.iron.barcode_server.entity.dto.ForeignGroupResponseDTO;
+
 import bsw.iron.barcode_server.entity.dto.TemplateLabelDTO;
 import bsw.iron.barcode_server.service.TemplatesLabelsService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -23,10 +22,16 @@ public class TemplatesLabelController {
         this.templatesLabelsService = templatesLabelsService;
     }
 
-    @GetMapping("/templates/{idCode}")
+    @GetMapping("/templates-idCode/{idCode}")
     public List<TemplatesLabels> findByIdCode(@PathVariable Long idCode) {
         return templatesLabelsService.findByIdCode(idCode);
     }
+
+    @GetMapping("/templates-id/{idTemplate}")
+    public List<TemplatesLabels> findByIdTemplate(@PathVariable Long idTemplate){
+        return templatesLabelsService.findByIdTemplate(idTemplate);
+    }
+
 
     @GetMapping("/templates/all")
     public List<TemplateLabelDTO> findAllOrderByIdCode() {

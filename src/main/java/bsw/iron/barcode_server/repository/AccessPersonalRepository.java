@@ -15,5 +15,5 @@ public interface AccessPersonalRepository extends JpaRepository<AccessPersonal, 
      */
     @Query("SELECT ap FROM AccessPersonal ap WHERE ap.accessPersonalPrimaryKey.idConversion = 11690 AND" +
             " ap.accessPersonalPrimaryKey.personals.idPersonal = :idPersonal")
-    public List<AccessPersonal> findAllByAccessPersonalPrimaryKeyPersonalsIdPersonal(Long idPersonal);
+    List<AccessPersonal> findAllByAccessPersonalPrimaryKeyPersonalsIdPersonal(Long idPersonal);
 }

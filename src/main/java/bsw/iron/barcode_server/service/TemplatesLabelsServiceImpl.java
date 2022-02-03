@@ -47,7 +47,13 @@ public class TemplatesLabelsServiceImpl implements TemplatesLabelsService {
     }
 
     @Override
+    public List<TemplatesLabels> findByIdTemplate(Long idTemplate) {
+        return templatesLabelsRepository.findByIdTemplate(idTemplate);
+    }
+
+    @Override
     public void deleteByIdTemplate(Long idTemplate) {
         templatesLabelsRepository.deleteByIdTemplate(idTemplate);
     }
+
 }

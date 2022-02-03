@@ -15,5 +15,5 @@ public interface TestHeadRepository extends JpaRepository<TestHead, Long> {
      * Получение всех наименований (caption) значений для передела 11690 в подчиненной таблице
      */
     @Query("SELECT th FROM TestHead th WHERE th.conversion.idConversion=11690")
-    public List<TestHead> findAllByConversionIdConversion();
+    List<TestHead> findAllByConversionIdConversion();
 }

@@ -13,19 +13,19 @@ public interface ForeignGroupRepository extends JpaRepository<ForeignGroup, Long
      * Поиск всех значений  idForeignGroup для передела 11690
      */
     @Query("SELECT fg FROM ForeignGroup fg WHERE fg.mainGroup.idConversion.idConversion=11690")
-    public List<ForeignGroup> findAllByMainGroupIdConversionAndIdForeignGroup();
+    List<ForeignGroup> findAllByMainGroupIdConversionAndIdForeignGroup();
 
 
     /**
      * Поиск конкретного значения  по idForeignGroup для передела 11690
      */
     @Query("SELECT fg FROM ForeignGroup fg WHERE fg.mainGroup.idConversion.idConversion=11690 AND fg.idForeignGroup = :idForeignGroup")
-    public List<ForeignGroup> findByMainGroupIdConversionAndIdForeignGroup(Long idForeignGroup);
+    List<ForeignGroup> findByMainGroupIdConversionAndIdForeignGroup(Long idForeignGroup);
 
     /**
      * Создание подчиненной записи idForeignGroup.
      */
-    public ForeignGroup saveAndFlush(ForeignGroup foreignGroup);
+    ForeignGroup saveAndFlush(ForeignGroup foreignGroup);
 
 
 }

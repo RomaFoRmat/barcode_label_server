@@ -9,14 +9,11 @@ import java.util.List;
 
 public interface MainGroupService {
 
-    public List<MainGroup> findAllByIdConversion();
-
+    List<MainGroup> findAllByIdConversion();
     @Transactional
-    public MainGroupResponseDTO addIdMain(MainGroupRequestDTO mainGroupRequestDTO);
-
-    public List<MainGroup> findByIdGroup(Long idGroup);
-
-    public List<MainGroup> findAllByIdConversionOrderByDateCreateDateCreateDesc();
+    MainGroupResponseDTO addIdMain(MainGroupRequestDTO mainGroupRequestDTO);
+    List<MainGroup> findByIdGroup(Long idGroup);
+    List<MainGroup> findAllByIdConversionOrderByDateCreateDateCreateDesc();
 
 
 }

@@ -8,12 +8,9 @@ import java.util.List;
 
 public interface ForeignGroupService {
 
-    public List<ForeignGroup> findByMainGroupIdConversionAndIdForeignGroup(Long idForeignGroup);
-
-    public ForeignGroupResponseDTO addIdForeign(ForeignGroupRequestDTO foreignGroupRequestDTO);
-
+    List<ForeignGroup> findByMainGroupIdConversionAndIdForeignGroup(Long idForeignGroup);
+    ForeignGroupResponseDTO addIdForeign(ForeignGroupRequestDTO foreignGroupRequestDTO);
 //    public ForeignGroup addIdForeign(List<TestValueDTO> testValueDTOs);
-
-    public List<ForeignGroup> findAllByMainGroupIdConversionAndIdForeignGroup();
+    List<ForeignGroup> findAllByMainGroupIdConversionAndIdForeignGroup();
 
 }

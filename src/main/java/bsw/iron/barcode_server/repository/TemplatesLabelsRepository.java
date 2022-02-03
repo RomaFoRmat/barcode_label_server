@@ -12,15 +12,20 @@ public interface TemplatesLabelsRepository extends JpaRepository<TemplatesLabels
 
     //вывод информации по IdCode:
     @Query("SELECT tl FROM TemplatesLabels tl WHERE tl.idCode = :idCode")
-    public List<TemplatesLabels> findByIdCode(Long idCode);
+    List<TemplatesLabels> findByIdCode(Long idCode);
 
     //Создать шаблон:
-    public TemplatesLabels saveAndFlush(TemplatesLabels templatesLabels);
+    TemplatesLabels saveAndFlush(TemplatesLabels templatesLabels);
 
     //вывод всех шаблонов
     @Query("SELECT tl FROM TemplatesLabels tl ORDER BY tl.idCode")
-    public List<TemplatesLabels> findAllOrderByIdCode();
+    List<TemplatesLabels> findAllOrderByIdCode();
 
-    public void deleteByIdTemplate(Long idTemplate);
+    //вывод информации по IdTemplate:
+    @Query("SELECT tl FROM TemplatesLabels tl WHERE tl.idTemplate = :idTemplate")
+    List<TemplatesLabels> findByIdTemplate(Long idTemplate);
+
+    //удаление по idTemplate
+    void deleteByIdTemplate(Long idTemplate);
 
 }
