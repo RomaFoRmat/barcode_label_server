@@ -32,7 +32,6 @@ public class TemplatesLabelController {
         return templatesLabelsService.findByIdTemplate(idTemplate);
     }
 
-
     @GetMapping("/templates/all")
     public List<TemplateLabelDTO> findAllOrderByIdCode() {
         return templatesLabelsService.findAllOrderByIdCode();
@@ -50,13 +49,6 @@ public class TemplatesLabelController {
         });
         return templatesLabelsService.saveAndFlush(template);
     }
-
-    @DeleteMapping("/templates/{idTemplate}")
-    @Transactional
-    public void deleteByIdTemplate(@PathVariable Long idTemplate) {
-        templatesLabelsService.deleteByIdTemplate(idTemplate);
-    }
-
     @PutMapping("/templates")
     @Transactional
     public TemplatesLabels updateTemplate(@RequestBody String templatesLabels) throws JsonProcessingException {
@@ -65,5 +57,13 @@ public class TemplatesLabelController {
         });
         return templatesLabelsService.saveAndFlush(template);
     }
+
+    @DeleteMapping("/templates/{idTemplate}")
+    @Transactional
+    public void deleteByIdTemplate(@PathVariable Long idTemplate) {
+        templatesLabelsService.deleteByIdTemplate(idTemplate);
+    }
+
+
 }
 

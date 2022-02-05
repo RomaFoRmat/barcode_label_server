@@ -22,8 +22,16 @@ public class TemplatesLabelsServiceImpl implements TemplatesLabelsService {
     }
 
     @Override
-    public List<TemplatesLabels> findByIdCode(Long idCode) {
-        return templatesLabelsRepository.findByIdCode(idCode);
+    public List<TemplatesLabels> findByIdCode(Long code) {
+        List<Code> codeList = codeRepository.findByCode(String.valueOf(code));
+        List<TemplatesLabels> templatesLabelsList = new ArrayList<>();
+        if(!codeList.isEmpty()){
+            templatesLabelsList = templatesLabelsRepository.findByIdCode(codeList.get(0).getCodePrimaryKey().getIdCode());
+        }
+        if (templatesLabelsList.isEmpty()) {
+            templatesLabelsList = templatesLabelsRepository.findByIdTemplate(2L); //default
+        }
+        return templatesLabelsList;
     }
 
 
