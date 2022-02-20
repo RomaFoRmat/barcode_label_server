@@ -5,6 +5,7 @@ import bsw.iron.barcode_server.repository.TestLabelRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
@@ -18,7 +19,12 @@ public class TestLabelServiceImpl implements TestLabelService{
 
     @Override
     public List<TestLabel> findByNumberSpool(String numberSpool) {
-        return testLabelRepository.findByNumberSpool(numberSpool);
+        System.out.println(LocalDateTime.now()
+                .format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")) + " Request started");
+        List<TestLabel> list = testLabelRepository.findByNumberSpool(numberSpool);
+        System.out.println(LocalDateTime.now()
+                .format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")) + " Request ended");
+        return list;
     }
 
     @Override

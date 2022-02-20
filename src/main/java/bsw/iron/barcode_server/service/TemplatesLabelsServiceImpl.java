@@ -29,7 +29,7 @@ public class TemplatesLabelsServiceImpl implements TemplatesLabelsService {
             templatesLabelsList = templatesLabelsRepository.findByIdCode(codeList.get(0).getCodePrimaryKey().getIdCode());
         }
         if (templatesLabelsList.isEmpty()) {
-            templatesLabelsList = templatesLabelsRepository.findByIdTemplate(2L); //default
+            templatesLabelsList = templatesLabelsRepository.findByIdTemplate(2L); //default template
         }
         return templatesLabelsList;
     }
