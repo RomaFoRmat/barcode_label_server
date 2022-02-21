@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "TEST_BARCODE_LABEL", schema = "HR")
+@Table(name = "TEST_BARCODE_LABEL", schema = "LABCZL")
 public class TestLabel {
 
     @Id
@@ -52,6 +52,9 @@ public class TestLabel {
 
     @Column(name = "PART")
     private String part;
+
+    @Column(name = "CONTAINER")
+    private Integer container;
 
     @Column(name = "RL")
     private String rl;
