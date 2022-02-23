@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "TEST_BARCODE_LABEL", schema = "LABCZL")
+@Table(name = "BARCODE_LABEL", schema = "LABCZL")
 public class TestLabel {
 
     @Id
@@ -35,8 +35,8 @@ public class TestLabel {
     @JsonProperty("timestamp")
     private LocalDateTime dateCreate;
 
-    @Column(name = "DATAMARK")
-    private LocalDate dateRope;
+//    @Column(name = "DATAMARK")
+//    private LocalDate dateRope;
 
     @Column(name = "KOD")
     private String code;
@@ -110,7 +110,7 @@ public class TestLabel {
     @Column(name = "TORSION")
     private Double torsion;
 
-    @Column(name = "CODEDEFECT")
-    private String codeDefect;
+//    @Column(name = "CODEDEFECT")
+//    private String codeDefect;
 
 }

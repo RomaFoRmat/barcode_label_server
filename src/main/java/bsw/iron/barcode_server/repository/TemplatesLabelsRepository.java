@@ -11,7 +11,7 @@ import java.util.List;
 public interface TemplatesLabelsRepository extends JpaRepository<TemplatesLabels,Long> {
 
     //вывод информации по IdCode:
-    @Query("SELECT tl FROM TemplatesLabels tl WHERE tl.idCode = :idCode")
+    @Query("SELECT tl FROM TemplatesLabels tl WHERE tl.idCode = :idCode ")
     List<TemplatesLabels> findByIdCode(Long idCode);
 
     //Создать шаблон:

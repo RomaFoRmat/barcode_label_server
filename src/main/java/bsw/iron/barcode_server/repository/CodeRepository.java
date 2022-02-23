@@ -18,7 +18,7 @@ public interface CodeRepository extends JpaRepository<Code, Long> {
   @Query("SELECT c FROM Code c WHERE c.codePrimaryKey.conversion.idConversion = 11690 AND c.visible = true ORDER BY c.code ")
   List<Code> findAllByConversionIdConversion();
 
-  @Query("SELECT c FROM Code c WHERE c.code = :code")
+  @Query("SELECT c FROM Code c WHERE c.code = :code AND c.codePrimaryKey.conversion.idConversion=11690")
   List<Code> findByCode(String code);
 
   @Query("SELECT c FROM  Code c WHERE c.codePrimaryKey.conversion.idConversion=11690 AND c.codePrimaryKey.idCode = :code")
