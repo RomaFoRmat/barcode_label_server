@@ -1,7 +1,6 @@
 package bsw.iron.barcode_server.controller;
 
 import bsw.iron.barcode_server.entity.Code;
-import bsw.iron.barcode_server.entity.TestLabel;
 import bsw.iron.barcode_server.service.CodeService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

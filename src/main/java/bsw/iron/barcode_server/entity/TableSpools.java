@@ -16,8 +16,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "BARCODE_LABEL", schema = "LABCZL")
-public class TestLabel {
+@Table(name = "TEST_BARCODE_LABEL", schema = "HR")
+public class TableSpools {
 
     @Id
     @Column(name = "ID_FOREING_GROUP")
@@ -65,8 +65,8 @@ public class TestLabel {
     @Column(name = "NTAB")
     private String personalRope;
 
-    @Column(name = "NSVAR")
-    private Double numberWeldingMachine;
+//    @Column(name = "NSVAR")
+//    private Double numberWeldingMachine;
 
     @Column(name = "NKANMASH")
     private Integer numberRopeMachine;

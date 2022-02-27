@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "GROUPS_OF_PERSONALS", schema = "LABCZL")
+@Table(name = "GROUPS_OF_PERSONALS", schema = "HR")
 public class GroupsOfPersonal {
 
     @Id

@@ -1,7 +1,6 @@
 package bsw.iron.barcode_server.repository;
 
 import bsw.iron.barcode_server.entity.Code;
-import bsw.iron.barcode_server.entity.TestLabel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

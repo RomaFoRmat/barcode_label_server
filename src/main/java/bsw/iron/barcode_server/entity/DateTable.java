@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "DATE_TABLE", schema = "LABCZL")
+@Table(name = "DATE_TABLE", schema = "HR")
 public class DateTable {
 
     @EmbeddedId
