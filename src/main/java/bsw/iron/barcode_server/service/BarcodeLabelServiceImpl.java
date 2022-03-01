@@ -1,9 +1,12 @@
 package bsw.iron.barcode_server.service;
 
 import bsw.iron.barcode_server.entity.BarcodeLabel;
+import bsw.iron.barcode_server.entity.TableSpools;
 import bsw.iron.barcode_server.repository.BarcodeLabelRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
@@ -17,6 +20,12 @@ public class BarcodeLabelServiceImpl implements BarcodeLabelService {
 
     @Override
     public List<BarcodeLabel> findByNumberSpool(String numberSpool) {
-        return barcodeLabelRepository.findByNumberSpool(numberSpool);
+        System.out.println(LocalDateTime.now()
+                .format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")) + " Request started");
+        List<BarcodeLabel> list = barcodeLabelRepository.findByNumberSpool(numberSpool);
+        System.out.println(LocalDateTime.now()
+                .format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")) + " Request ended");
+        return list;
+
     }
 }

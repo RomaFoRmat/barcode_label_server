@@ -19,12 +19,7 @@ public class TableSpoolsServiceImpl implements TableSpoolsService {
 
     @Override
     public List<TableSpools> findByNumberSpool(String numberSpool) {
-        System.out.println(LocalDateTime.now()
-                .format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")) + " Request started");
-        List<TableSpools> list = tableSpoolsRepository.findByNumberSpool(numberSpool);
-        System.out.println(LocalDateTime.now()
-                .format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")) + " Request ended");
-        return list;
+        return tableSpoolsRepository.findByNumberSpool(numberSpool);
     }
 
     @Override

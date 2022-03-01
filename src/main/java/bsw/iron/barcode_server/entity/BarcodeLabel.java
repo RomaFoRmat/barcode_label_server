@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "BARCODE_LABEL", schema = "HR")
+@Table(name = "BARCODE_LABEL", schema = "LABCZL")
 public class BarcodeLabel {
 
     @Id
@@ -28,7 +28,7 @@ public class BarcodeLabel {
     @Column(name = "NUMBERSPOOL")
     private String numberSpool;
 
-    //    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
+//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
     @Column(name = "DATE_CREATE")
     @JsonProperty("timestamp")
     private LocalDateTime dateCreate;
@@ -49,20 +49,11 @@ public class BarcodeLabel {
     @Column(name = "PART")
     private String part;
 
-    @Column(name = "CONTAINER")
-    private Integer container;
-
     @Column(name = "RL")
     private String rl;
 
     @Column(name = "TYPEBOBIN")
     private String typeSpool;
-
-    @Column(name = "NTAB")
-    private String personalRope;
-
-    @Column(name = "NKANMASH")
-    private Integer numberRopeMachine;
 
     @Column(name = "LENGHTH")
     private Integer length;
