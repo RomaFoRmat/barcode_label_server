@@ -52,8 +52,8 @@ public class BarcodeLabel {
     @Column(name = "RL")
     private String rl;
 
-    @Column(name = "TYPEBOBIN")
-    private String typeSpool;
+//    @Column(name = "TYPEBOBIN")
+//    private String typeSpool;
 
     @Column(name = "LENGHTH")
     private Integer length;
