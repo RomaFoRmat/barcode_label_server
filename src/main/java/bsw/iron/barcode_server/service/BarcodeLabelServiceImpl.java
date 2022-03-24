@@ -28,4 +28,14 @@ public class BarcodeLabelServiceImpl implements BarcodeLabelService {
         return list;
 
     }
+
+    @Override
+    public List<BarcodeLabel> findByNumberSpoolBetween(Integer amountDays,String numberSpool) {
+        System.out.println(LocalDateTime.now()
+                .format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")) + " Request started");
+        List<BarcodeLabel> list = barcodeLabelRepository.findByNumberSpoolBetween(amountDays,numberSpool);
+        System.out.println(LocalDateTime.now()
+                .format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")) + " Request ended");
+        return list;
+    }
 }

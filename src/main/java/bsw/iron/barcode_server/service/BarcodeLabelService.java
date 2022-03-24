@@ -7,4 +7,5 @@ import java.util.List;
 public interface BarcodeLabelService {
 
     List<BarcodeLabel> findByNumberSpool(String numberSpool);
+    List<BarcodeLabel> findByNumberSpoolBetween(Integer amountDays,String numberSpool);
 }

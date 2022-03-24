@@ -21,4 +21,9 @@ public class BarcodeLabelController {
     public List<BarcodeLabel> showDataSpool(@PathVariable String numberSpool) {
         return barcodeLabelService.findByNumberSpool(numberSpool);
     }
+    @GetMapping("/spool-between/{amountDays}/{numberSpool}")
+    public List<BarcodeLabel> showDataSpoolBetween(@PathVariable Integer amountDays,
+                                                   @PathVariable String numberSpool) {
+        return barcodeLabelService.findByNumberSpoolBetween(amountDays,numberSpool);
+    }
 }
