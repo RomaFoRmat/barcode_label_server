@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "BARCODE_LABEL", schema = "LABCZL")
+@Table(name = "BARCODE_LABEL", schema = "HR")
 public class BarcodeLabel {
 
     @Id
@@ -32,7 +32,6 @@ public class BarcodeLabel {
     @Column(name = "DATE_CREATE")
     @JsonProperty("timestamp")
     private LocalDateTime dateCreate;
-
 
     @Column(name = "KOD")
     private String code;

@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "TEST_BARCODE_LABEL", schema = "LABCZL")
+@Table(name = "TEST_BARCODE_LABEL", schema = "HR")
 public class TableSpools {
 
     @Id
