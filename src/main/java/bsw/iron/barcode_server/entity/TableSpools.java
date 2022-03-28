@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "TEST_BARCODE_LABEL", schema = "HR")
+@Table(name = "TEST_BARCODE_LABEL", schema = "LABCZL")
 public class TableSpools {
 
     @Id
@@ -30,7 +30,7 @@ public class TableSpools {
     @Column(name = "NUMBERSPOOL")
     private String numberSpool;
 
-    //    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
+//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
     @Column(name = "DATE_CREATE")
     @JsonProperty("timestamp")
     private LocalDateTime dateCreate;
@@ -65,13 +65,10 @@ public class TableSpools {
     @Column(name = "NTAB")
     private String personalRope;
 
-//    @Column(name = "NSVAR")
-//    private Double numberWeldingMachine;
-
     @Column(name = "NKANMASH")
     private Integer numberRopeMachine;
 
-    @Column(name = "LENGHTH")
+    @Column(name = "LGHT")
     private Integer length;
 
     @Column(name = "SVAR")
@@ -98,17 +95,20 @@ public class TableSpools {
     @Column(name = "PRAVG")
     private Double straightforwardness600Avg;
 
-    @Column(name = "STRAIGHT_ROPE")
-    private Double straightforwardnessRope;
-
-    @Column(name = "TORSION_ROPE") //В БД Неправильно указано название
-    private Double torsRope;
-
     @Column(name = "STRAIGHT_300")
     private Double straightforwardness300;
 
     @Column(name = "TORSION")
     private Double torsion;
+
+//    @Column(name = "NSVAR")
+//    private Double numberWeldingMachine;
+
+//    @Column(name = "STRAIGHT_ROPE")
+//    private Double straightforwardnessRope;
+
+//    @Column(name = "TORSION_ROPE") //В БД Неправильно указано название
+//    private Double torsRope;
 
 //    @Column(name = "CODEDEFECT")
 //    private String codeDefect;

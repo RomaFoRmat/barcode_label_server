@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "TEST_VALUE", schema = "HR")
+@Table(name = "TEST_VALUE", schema = "LABCZL")
 public class TestValue {
 
     //Композитный PK
