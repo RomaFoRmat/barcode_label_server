@@ -11,7 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "PREDEL", schema = "LABCZL")
+@Table(name = "PREDEL", schema = "HR")
 public class Limit {
     @EmbeddedId
     private LimitUniqueKey limitUniqueKey;

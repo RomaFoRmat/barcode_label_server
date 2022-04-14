@@ -30,6 +30,11 @@ public class MainValueController {
         return mainValueService.findFirstByMainValuePrimaryKeyIdHead();
     }
 
+    @GetMapping("/value11691ById/{idGroup}")
+    public List<Long> findByValue11691(@PathVariable Long idGroup){
+        return mainValueService.findByValue11691(idGroup);
+    }
+
     @GetMapping("/allMainValues")
     public List<MainValue> findAll() {
         return mainValueService.findAll();
