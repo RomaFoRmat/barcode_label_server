@@ -1,7 +1,6 @@
 package bsw.iron.barcode_server.service;
 
 import bsw.iron.barcode_server.entity.Limit;
-import bsw.iron.barcode_server.entity.LimitDTO;
 
 import java.util.List;
 

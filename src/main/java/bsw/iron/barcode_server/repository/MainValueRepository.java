@@ -25,7 +25,7 @@ public interface MainValueRepository extends JpaRepository<MainValue, Long> {
      * */
     @Query("SELECT mv.value FROM MainValue mv WHERE mv.mainValuePrimaryKey.idGroup = :idGroup AND " +
             "mv.mainValuePrimaryKey.idHead = 11691")
-    List<Long> findByValue11691(Long idGroup);
+    Long findByValue11691(Long idGroup);
 
     /**
      * Получение последнего max значения "протокол" за текущий год

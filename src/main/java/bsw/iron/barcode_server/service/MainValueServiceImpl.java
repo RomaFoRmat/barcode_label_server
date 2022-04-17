@@ -28,7 +28,7 @@ public class MainValueServiceImpl implements MainValueService {
     }
 
     @Override
-    public List<Long> findByValue11691(Long idGroup) {
+    public Long findByValue11691(Long idGroup) {
         return mainValueRepository.findByValue11691(idGroup);
     }
 

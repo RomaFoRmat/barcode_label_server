@@ -31,7 +31,7 @@ public class MainValueController {
     }
 
     @GetMapping("/value11691ById/{idGroup}")
-    public List<Long> findByValue11691(@PathVariable Long idGroup){
+    public Long findByValue11691(@PathVariable Long idGroup){
         return mainValueService.findByValue11691(idGroup);
     }
 

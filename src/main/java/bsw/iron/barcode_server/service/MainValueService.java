@@ -10,7 +10,7 @@ public interface MainValueService {
 
     List<MainValue> findByMainValuePrimaryKeyIdHead(Long idHead);
     List<String> findFirstByMainValuePrimaryKeyIdHead();
-    List<Long> findByValue11691(Long idGroup);
+    Long findByValue11691(Long idGroup);
     List<MainValue> findAll();
     Page<MainValue> findAll(Pageable pageable);
     MainValue saveAndFlush(MainValue mainValue);

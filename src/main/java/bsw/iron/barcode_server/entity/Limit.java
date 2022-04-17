@@ -13,6 +13,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "PREDEL", schema = "HR")
 public class Limit {
+
     @EmbeddedId
     private LimitUniqueKey limitUniqueKey;
 
@@ -24,11 +25,13 @@ public class Limit {
     @NoArgsConstructor
     public static class LimitUniqueKey implements Serializable {
 
-        @ManyToOne(cascade = CascadeType.ALL)
-        @JoinColumn(name = "ID_TEST_HEAD")
-        private TestHead testHead;
+        @Column(name = "ID_TEST_HEAD")
+        private Long idTestHead;
 
         @Column(name = "ID_KOD")
-        private Code.CodePrimaryKey codePK;
+        private Long idCode;
+
+        @Column(name = "ID_PEREDEL")
+        private Long idConversion;
     }
 }
