@@ -25,7 +25,7 @@ public class LimitController {
     }
 
     @GetMapping("/show-experience/{idCode}")
-    List<Limit> findLimitByLimitUniqueKeyCodePK(@PathVariable Long idCode){
-        return limitService.findLimitByLimitUniqueKeyCodePK(idCode);
+    List<Limit> findByLimitUniqueKeyIdCode(@PathVariable Long idCode){
+        return limitService.findByLimitUniqueKeyIdCode(idCode);
     }
 }

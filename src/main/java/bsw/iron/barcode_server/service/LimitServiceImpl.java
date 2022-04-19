@@ -3,7 +3,6 @@ package bsw.iron.barcode_server.service;
 import bsw.iron.barcode_server.entity.Code;
 import bsw.iron.barcode_server.entity.Limit;
 import bsw.iron.barcode_server.entity.MainGroup;
-import bsw.iron.barcode_server.entity.TemplatesLabels;
 import bsw.iron.barcode_server.repository.CodeRepository;
 import bsw.iron.barcode_server.repository.LimitRepository;
 import bsw.iron.barcode_server.repository.MainGroupRepository;
@@ -36,13 +35,16 @@ public class LimitServiceImpl implements  LimitService {
 
 
     @Override
-    public List<Limit> findLimitByLimitUniqueKeyCodePK(Long idCode) {
-//        Code code = codeRepository.findByIdKod(idCode);
-//        List<Limit> limitList = new ArrayList<>();
-//        if(code != null){
-//            limitList = limitRepository.findLimitByLimitUniqueKeyCodePK(code.getCodePrimaryKey().getIdCode());
+    public List<Limit> findByLimitUniqueKeyIdCode(Long idCode) {
+//        MainGroup mainGroup = new MainGroup();
+//        Long idGroup = mainGroup.getIdGroup();
+//        Long byValue11691 = mainValueRepository.findByValue11691(idGroup);
+//        Code code = codeRepository.findByIdKod(byValue11691);
+//        List<Limit>limitList = new ArrayList<>();
+//        if(code !=null){
+//            limitList = limitRepository.findByLimitUniqueKeyIdCode(code.getCodePrimaryKey().getIdCode());
 //        }
 //        return limitList;
-        return limitRepository.findLimitByLimitUniqueKeyCodePK(idCode);
+       return limitRepository.findByLimitUniqueKeyIdCode(idCode);
     }
 }

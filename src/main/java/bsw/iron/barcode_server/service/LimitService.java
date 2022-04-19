@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface LimitService {
     List<Limit> findLimitByLimitUniqueKey(Long idCode, Long idTestHead);
-    List<Limit> findLimitByLimitUniqueKeyCodePK(Long idCode);
+    List<Limit> findByLimitUniqueKeyIdCode(Long idCode);
 //    List<Limit> findLimitByLimitUniqueKeyCodePK(LimitDTO limitDTO);
 }
