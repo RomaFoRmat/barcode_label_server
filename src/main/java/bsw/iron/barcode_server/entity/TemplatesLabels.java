@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "TEMPLATES_LABELS", schema = "HR")
+@Table(name = "TEMPLATES_LABELS", schema = "LABCZL")
 public class TemplatesLabels {
 
     @Id
