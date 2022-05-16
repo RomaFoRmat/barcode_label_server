@@ -84,7 +84,12 @@ public class MainGroupServiceImpl implements MainGroupService {
     }
 
     @Override
-    public List<MainGroup> findAllByIdConversionOrderByDateCreateDateCreateDesc() {
-        return mainGroupRepository.findAllByIdConversionOrderByDateCreateDateCreateDesc();
+    public List<MainGroup> findAllByDateCreateMonth() {
+        return mainGroupRepository.findAllByDateCreateMonth();
+    }
+
+    @Override
+    public List<MainGroup> findAllByDateCreateBetween(LocalDateTime dateStart, LocalDateTime dateEnd) {
+        return findAllByDateCreateBetween(dateStart,dateEnd);
     }
 }

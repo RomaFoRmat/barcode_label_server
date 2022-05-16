@@ -1,5 +1,6 @@
 package bsw.iron.barcode_server.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "MAIN_GROUP", schema = "LABCZL")
+@Table(name = "MAIN_GROUP", schema = "HR")
 
 public class MainGroup {
 
@@ -27,6 +28,7 @@ public class MainGroup {
 
 
     @Column(name = "DATE_CREATE")
+//    @JsonProperty("timestamp")
     private LocalDateTime dateCreate;
 
 

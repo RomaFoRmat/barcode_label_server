@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
@@ -27,11 +28,14 @@ public interface MainGroupRepository extends JpaRepository<MainGroup, Long> {
     List<MainGroup> findByIdGroup(Long idGroup);
 
     /**
-     * Вывод всех записей idGroup по убыванию:
+     * Вывод всех записей idGroup за месяц по убыванию:
      */
-    @Query("SELECT mg FROM MainGroup mg WHERE mg.idConversion.idConversion = 11690 ORDER BY mg.dateCreate DESC")
-//    @Query(value = "SELECT * FROM MAIN_GROUP mg WHERE mg.ID_PEREDEL = 11690 AND mg.DATE_CREATE > SYSDATE - 31 " +
-//            "ORDER BY mg.DATE_CREATE DESC",nativeQuery = true)
-    List<MainGroup> findAllByIdConversionOrderByDateCreateDateCreateDesc();
+//    @Query("SELECT mg FROM MainGroup mg WHERE mg.idConversion.idConversion = 11690 ORDER BY mg.dateCreate DESC")
+    @Query(value = "SELECT * FROM MAIN_GROUP mg WHERE mg.ID_PEREDEL = 11690 AND mg.DATE_CREATE > SYSDATE - 31 " +
+            "ORDER BY mg.DATE_CREATE DESC",nativeQuery = true)
+    List<MainGroup> findAllByDateCreateMonth();
 
+    @Query(value = "SELECT mg FROM MainGroup mg WHERE mg.idConversion.idConversion=11690 " +
+            "AND mg.dateCreate BETWEEN :dateStart AND :dateEnd ORDER BY mg.dateCreate DESC")
+    List<MainGroup> findAllByDateCreateBetween(LocalDateTime dateStart, LocalDateTime dateEnd);
 }

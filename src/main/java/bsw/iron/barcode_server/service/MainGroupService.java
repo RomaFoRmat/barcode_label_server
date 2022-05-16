@@ -5,6 +5,7 @@ import bsw.iron.barcode_server.entity.dto.MainGroupRequestDTO;
 import bsw.iron.barcode_server.entity.dto.MainGroupResponseDTO;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public interface MainGroupService {
@@ -13,7 +14,8 @@ public interface MainGroupService {
     @Transactional
     MainGroupResponseDTO addIdMain(MainGroupRequestDTO mainGroupRequestDTO);
     List<MainGroup> findByIdGroup(Long idGroup);
-    List<MainGroup> findAllByIdConversionOrderByDateCreateDateCreateDesc();
+    List<MainGroup> findAllByDateCreateMonth();
+    List<MainGroup> findAllByDateCreateBetween(LocalDateTime dateStart, LocalDateTime dateEnd);
 
 
 }

@@ -17,3 +17,4 @@ public interface AccessPersonalRepository extends JpaRepository<AccessPersonal, 
             " ap.accessPersonalPrimaryKey.personals.idPersonal = :idPersonal")
     List<AccessPersonal> findAllByAccessPersonalPrimaryKeyPersonalsIdPersonal(Long idPersonal);
 }
+

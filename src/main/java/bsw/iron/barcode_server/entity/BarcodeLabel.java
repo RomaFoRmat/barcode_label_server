@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "BARCODE_LABEL", schema = "LABCZL")
+@Table(name = "BARCODE_LABEL", schema = "HR")
 public class BarcodeLabel {
 
     @Id

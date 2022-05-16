@@ -8,9 +8,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -45,8 +47,14 @@ public class MainGroupController {
         return mainGroupService.findByIdGroup(idGroup);
     }
 
-    @GetMapping("/getAllIdGroup")
-    public List<MainGroup> getAllIdGroup() {
-        return mainGroupService.findAllByIdConversionOrderByDateCreateDateCreateDesc();
+    @GetMapping("/getAllIdGroup-forTheMonth")
+    public List<MainGroup> getAllIdGroupMonth() {
+        return mainGroupService.findAllByDateCreateMonth();
+    }
+
+    @GetMapping("/getAllIdGroupBetween/{dateStart}{dateEnd}")
+    public List<MainGroup> findAllByDateCreateBetween(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateStart,
+                                                      @PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateEnd){
+        return mainGroupService.findAllByDateCreateBetween(dateStart,dateEnd);
     }
 }
