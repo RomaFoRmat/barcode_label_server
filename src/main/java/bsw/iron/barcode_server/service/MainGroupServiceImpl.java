@@ -89,6 +89,16 @@ public class MainGroupServiceImpl implements MainGroupService {
     }
 
     @Override
+    public List<MainGroup> findAllByDateCreateSixMonth() {
+        return mainGroupRepository.findAllByDateCreateSixMonth();
+    }
+
+    @Override
+    public List<MainGroup> findAllByDateCreateYear() {
+        return mainGroupRepository.findAllByDateCreateYear();
+    }
+
+    @Override
     public List<MainGroup> findAllByDateCreateBetween(LocalDateTime dateStart, LocalDateTime dateEnd) {
         return findAllByDateCreateBetween(dateStart,dateEnd);
     }

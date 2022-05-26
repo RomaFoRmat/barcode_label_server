@@ -52,6 +52,16 @@ public class MainGroupController {
         return mainGroupService.findAllByDateCreateMonth();
     }
 
+    @GetMapping("/getAllIdGroup-forTheYear")
+    public List<MainGroup> getAllIdGroupForTheYear() {
+        return mainGroupService.findAllByDateCreateYear();
+    }
+
+    @GetMapping("/getAllIdGroup-forSixMonths")
+        public List<MainGroup> getAllIdGroupSixMonths(){
+        return mainGroupService.findAllByDateCreateSixMonth();
+    }
+
     @GetMapping("/getAllIdGroupBetween/{dateStart}{dateEnd}")
     public List<MainGroup> findAllByDateCreateBetween(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateStart,
                                                       @PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateEnd){

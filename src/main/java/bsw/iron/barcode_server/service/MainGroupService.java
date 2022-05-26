@@ -15,6 +15,8 @@ public interface MainGroupService {
     MainGroupResponseDTO addIdMain(MainGroupRequestDTO mainGroupRequestDTO);
     List<MainGroup> findByIdGroup(Long idGroup);
     List<MainGroup> findAllByDateCreateMonth();
+    List<MainGroup> findAllByDateCreateSixMonth();
+    List<MainGroup> findAllByDateCreateYear();
     List<MainGroup> findAllByDateCreateBetween(LocalDateTime dateStart, LocalDateTime dateEnd);
 
 
