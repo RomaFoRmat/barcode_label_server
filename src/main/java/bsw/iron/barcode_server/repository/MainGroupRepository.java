@@ -31,6 +31,10 @@ public interface MainGroupRepository extends JpaRepository<MainGroup, Long> {
      * Вывод всех записей idGroup за месяц по убыванию:
      */
 //    @Query("SELECT mg FROM MainGroup mg WHERE mg.idConversion.idConversion = 11690 ORDER BY mg.dateCreate DESC")
+    @Query(value = "SELECT * FROM MAIN_GROUP mg WHERE mg.ID_PEREDEL = 11690 AND mg.DATE_CREATE > SYSDATE - 7 " +
+            "ORDER BY mg.DATE_CREATE DESC",nativeQuery = true)
+    List<MainGroup> findAllByDateCreateWeek();
+
     @Query(value = "SELECT * FROM MAIN_GROUP mg WHERE mg.ID_PEREDEL = 11690 AND mg.DATE_CREATE > SYSDATE - 31 " +
             "ORDER BY mg.DATE_CREATE DESC",nativeQuery = true)
     List<MainGroup> findAllByDateCreateMonth();

@@ -84,6 +84,9 @@ public class MainGroupServiceImpl implements MainGroupService {
     }
 
     @Override
+    public List<MainGroup> findAllByDateCreateWeek() { return  mainGroupRepository.findAllByDateCreateWeek(); }
+
+    @Override
     public List<MainGroup> findAllByDateCreateMonth() {
         return mainGroupRepository.findAllByDateCreateMonth();
     }

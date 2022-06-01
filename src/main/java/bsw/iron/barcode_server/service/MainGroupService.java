@@ -14,6 +14,7 @@ public interface MainGroupService {
     @Transactional
     MainGroupResponseDTO addIdMain(MainGroupRequestDTO mainGroupRequestDTO);
     List<MainGroup> findByIdGroup(Long idGroup);
+    List<MainGroup> findAllByDateCreateWeek();
     List<MainGroup> findAllByDateCreateMonth();
     List<MainGroup> findAllByDateCreateSixMonth();
     List<MainGroup> findAllByDateCreateYear();

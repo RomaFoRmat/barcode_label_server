@@ -47,6 +47,11 @@ public class MainGroupController {
         return mainGroupService.findByIdGroup(idGroup);
     }
 
+    @GetMapping("/getAllIdGroup-forTheWeek")
+    public List<MainGroup> getAllIdGroupWeek() {
+        return mainGroupService.findAllByDateCreateWeek();
+    }
+
     @GetMapping("/getAllIdGroup-forTheMonth")
     public List<MainGroup> getAllIdGroupMonth() {
         return mainGroupService.findAllByDateCreateMonth();
