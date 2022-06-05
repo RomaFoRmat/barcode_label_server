@@ -49,4 +49,9 @@ public class ForeignGroupController {
     public List<ForeignGroup> findAllByMainGroupIdConversionAndIdForeignGroup() {
         return foreignGroupService.findAllByMainGroupIdConversionAndIdForeignGroup();
     }
+
+    @GetMapping("/amount-spools/{idGroup}")
+    public Integer findByMainGroupAmount(@PathVariable Long idGroup) {
+        return foreignGroupService.findByMainGroupAmount(idGroup);
+    }
 }

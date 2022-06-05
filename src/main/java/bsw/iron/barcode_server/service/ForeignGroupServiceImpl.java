@@ -82,5 +82,10 @@ public class ForeignGroupServiceImpl implements ForeignGroupService {
         return foreignGroupRepository.findAllByMainGroupIdConversionAndIdForeignGroup();
     }
 
+    @Override
+    public Integer findByMainGroupAmount(Long idGroup) {
+        return foreignGroupRepository.findByMainGroupAmount(idGroup);
+    }
+
 
 }

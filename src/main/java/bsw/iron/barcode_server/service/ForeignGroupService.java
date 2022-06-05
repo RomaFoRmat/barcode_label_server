@@ -12,5 +12,6 @@ public interface ForeignGroupService {
     ForeignGroupResponseDTO addIdForeign(ForeignGroupRequestDTO foreignGroupRequestDTO);
 //    public ForeignGroup addIdForeign(List<TestValueDTO> testValueDTOs);
     List<ForeignGroup> findAllByMainGroupIdConversionAndIdForeignGroup();
+    Integer findByMainGroupAmount(Long idGroup);
 
 }

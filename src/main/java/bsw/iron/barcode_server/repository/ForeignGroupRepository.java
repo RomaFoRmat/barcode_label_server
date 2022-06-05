@@ -27,5 +27,11 @@ public interface ForeignGroupRepository extends JpaRepository<ForeignGroup, Long
      */
     ForeignGroup saveAndFlush(ForeignGroup foreignGroup);
 
+    /**
+     * Количество катушек в главной записи
+     */
+    @Query(value = "SELECT COUNT (*) FROM FOREIN_GROUP fg WHERE fg.ID_GROUP= :idGroup", nativeQuery = true)
+    Integer findByMainGroupAmount(Long idGroup);
+
 
 }
