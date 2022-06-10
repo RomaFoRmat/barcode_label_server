@@ -10,7 +10,7 @@
     </parent>
     <groupId>bsw.iron.stpc2</groupId>
     <artifactId>barcode_server</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <name>barcode_server</name>
     <description>Project for Spring Boot</description>
     <properties>
@@ -74,7 +74,7 @@
             </plugin>
         </plugins>
 
-        <finalName>barcode-label-app-server</finalName>
+        <finalName>bsw-spools-scan-server</finalName>
     </build>
 
 </project>
