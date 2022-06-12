@@ -43,6 +43,10 @@ public interface MainGroupRepository extends JpaRepository<MainGroup, Long> {
             "ORDER BY mg.DATE_CREATE DESC",nativeQuery = true)
     List<MainGroup> findAllByDateCreateSixMonth();
 
+    @Query(value = "SELECT * FROM MAIN_GROUP mg WHERE mg.ID_PEREDEL = 11690 AND mg.DATE_CREATE > SYSDATE - 180 " +
+            "ORDER BY mg.DATE_CREATE DESC",nativeQuery = true)
+    List<MainGroup> findAllByDateCreateSixMonths();
+
     @Query(value = "SELECT * FROM MAIN_GROUP mg WHERE mg.ID_PEREDEL = 11690 AND mg.DATE_CREATE > SYSDATE - 365 " +
             "ORDER BY mg.DATE_CREATE DESC",nativeQuery = true)
     List<MainGroup> findAllByDateCreateYear();
